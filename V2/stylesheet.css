@@ -26,11 +26,10 @@ html, body {
     }
 }
 
-
 #topImage{
     display: flex;
     /*grid-template: 0fr 4fr 5fr / auto;*/
-    justify-content: center;
+    justify-content: stretch;
     align-items: end;
     flex-flow: column nowrap;
     width: 80%;
@@ -87,14 +86,6 @@ html, body {
     border-color: rgb(157, 165, 172);
     width: 50%;
 }
-.signin .Textbox #inputs input:hover{
-    border-color: rgb(92, 158, 235);
-}
-
-.signin .Textbox #inputs input:active{
-    border-color: white;
-}
-
 .signin .Textbox #inputs p4{
     color: rgb(157, 165, 172);
 }
@@ -128,11 +119,10 @@ input:focus {
     border-color: #719ECE;
 }
 
-textarea:focus { 
-    outline: none !important;
+input:active {    
     border-color: #719ECE;
-    box-shadow: 0 0 10px #719ECE;
-}
+} 
+
 
 #typicalAmerican{
     animation-name: man_entry;
