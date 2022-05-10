@@ -1,0 +1,153 @@
+html, body {
+    background-color: #6C75C3;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+* { box-sizing: border-box; }
+
+.signin{
+    display: grid;
+    grid-template-columns: 26rem auto;
+    grid-template-areas: "images signup";
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:52rem) {
+    .signin img{
+        display: none;
+    }
+    .signin {
+        grid-template-columns: 0 auto;
+    }
+}
+
+
+#topImage{
+    display: flex;
+    /*grid-template: 0fr 4fr 5fr / auto;*/
+    justify-content: center;
+    align-items: end;
+    flex-flow: column nowrap;
+    width: 80%;
+    height: 100%;
+    grid-area: images;
+    overflow: hidden;
+    justify-self: center;
+}
+#topImage img {
+    width: 100%;
+    height: auto;
+}
+
+#light_on { display: none; }
+#lights:hover #light_off { display: none; }
+#lights:hover #light_on { display: initial; }
+
+.signin .Textbox{
+    font-family: 'Poppins';
+    font-size: 18px;
+    grid-area: signup;
+    flex-direction: column;
+    margin: 1%;
+    padding: 2%;
+    border: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    background-color: white;
+    border-color: white;
+    width: 78%;
+    justify-self: center;
+    align-self: stretch;
+}
+
+.signin .Textbox h2{
+   text-align: center; 
+}
+
+.signin .Textbox #inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin .Textbox #inputs input{
+    padding: 2%;
+    margin-bottom: 3%;
+    font-family: "Poppins";
+    border: 0ch;
+    border-radius: 0%;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-color: rgb(157, 165, 172);
+    width: 50%;
+}
+.signin .Textbox #inputs input:hover{
+    border-color: rgb(92, 158, 235);
+}
+
+.signin .Textbox #inputs input:active{
+    border-color: white;
+}
+
+.signin .Textbox #inputs p4{
+    color: rgb(157, 165, 172);
+}
+
+.signin .Textbox #inputs #submiting{
+    width: 10%;
+}
+
+input[type=submit]{
+    display: flex;
+        flex-direction: column;
+        font-family: "Poppins";
+        justify-content: column;
+        align-items: center;
+        background: transparent;
+        border: 0px !important;
+        width: 32vw !important;
+        height: 7vh !important;
+        border-radius: 5px !important;
+        background-color: rgb(93, 170, 244) !important;
+        color: white;
+        font-size: large;
+        text-align: center;
+        margin-bottom: 0.5% !important;
+        vertical-align: center;
+        padding-top: 10px !important;
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+}
+
+textarea:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+#typicalAmerican{
+    animation-name: man_entry;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes man_entry {
+    from {
+        transform: translateY(100%);
+        opacity: 50%;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+

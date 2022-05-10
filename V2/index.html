@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" media="screen" href="stylesheet.css">
+        <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
+        <meta charset="UTF-8" />
+    </head>
+
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="index.js"></script>
+
+    <title>Sign Up</title>
+    <body>
+        <div class="signin">
+            <div id = "topImage">
+                <div id = "lights">
+                    <img id="light_off" src = "Light_Bulb_OFF.png">
+                    <img id="light_on" src = "Light_Bulb_ON.png">
+                </div>
+                <div style="flex-grow: 1000000;"></div>
+                <img id = "typicalAmerican" src = "Western Man.png">
+            </div>
+            <div class = "Textbox">
+                <h2>Create Account</h2>
+                <div id="inputs">
+                    <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                    <br>
+                    <p4>- OR -</p4>
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password"> 
+                    <b><input type="submit" value="Submit" id="Submit"></b>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
