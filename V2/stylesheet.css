@@ -44,7 +44,9 @@ html, body {
 }
 
 #light_on { display: none; }
+
 #lights:hover #light_off { display: none; }
+
 #lights:hover #light_on { display: initial; }
 
 .signin .Textbox{
@@ -86,6 +88,7 @@ html, body {
     border-color: rgb(157, 165, 172);
     width: 50%;
 }
+
 .signin .Textbox #inputs p4{
     color: rgb(157, 165, 172);
 }
