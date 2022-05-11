@@ -1,0 +1,45 @@
+html, body {
+    background-color: #6C75C3;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+* { 
+    box-sizing: border-box; 
+    font-family: "Poppins";
+}
+
+#NavBar{
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    flex-flow: row nowrap;
+    overflow: hidden;
+    animation-name: navBarIn;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+}
+
+#NavBar a{
+    padding: 1.5%;
+    text-decoration: none;
+    color: black;
+}
+
+#NavBar a:hover{
+    padding: 1.5%;
+    text-decoration: none;
+    color: #6C75C3;
+}
+
+@keyframes navBarIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
