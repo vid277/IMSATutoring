@@ -12,26 +12,35 @@ html, body {
     font-family: "Poppins";
 }
 
-#NavBar{
+.NavBar{
     display: flex;
     background-color: hsl(0, 0%, 100%);
     flex-flow: row nowrap;
     overflow: hidden;
     animation-name: navBarIn;
-    animation-duration: 0.75s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-out;
+    padding: 0%;
+    border: solid;
+    border-width: 0px;
+    border-bottom-width: 3px;
+    border-color: rgb(32, 32, 29);
 }
 
-#NavBar a{
-    padding: 1.5%;
+.NavBar, .learnMenu, .feedbackMenu, .helpMenu, a{
+    padding: 0.75%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
     text-decoration: none;
     color: black;
 }
 
-#NavBar a:hover{
-    padding: 1.5%;
+.NavBar a:hover{
+    padding: 0.75%;
     text-decoration: none;
     color: #6C75C3;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
 
 @keyframes navBarIn {
@@ -43,3 +52,43 @@ html, body {
     }
 }
 
+#learnMenuDropdown{
+    position: absolute;
+    top: 100%;
+    background-color: #ffffff;
+    min-width: 210px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: solid 2px;
+    border-color: rgb(33, 31, 31);
+    border-radius: 10px;
+}
+
+#learnMenuDropdownHitbox {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 10em;
+    height: 11.5%;
+    overflow: visible;
+}
+
+#learnMenuDropdown a {
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.learnMenu:hover #learnMenuDropdown {
+    display: inline-grid;
+    padding: 1%;
+    text-align: left;
+}
+
+.learnMenu:hover #learnMenuDropdownHitbox {
+    display: block;
+}
+
+.learnMenu:hover #learnMenuDropdown a:hover {
+    color: #6C75C3; 
+}
