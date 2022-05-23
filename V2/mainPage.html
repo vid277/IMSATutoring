@@ -4,22 +4,87 @@
         <link rel="stylesheet" media="screen" href="common.css">
         <link rel="stylesheet" media="screen" href="mainPage.css">
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <meta charset="UTF-8"/>
     </head>
     <body>
         <div class = "NavBar">
-            <div class= "learnMenu">
+            <div class= "dropdownHost">
                 <a href = "#">
                     Learn
                 </a>
-                <div id="learnMenuDropdownHitbox">
-                    <div id="learnMenuDropdown">
-                        <a href="#">Math</a>
-                        <a href="#">Science</a>
-                        <a href="#">English</a>
-                        <a href="#">Computer Science</a>
-                        <a href="#">History</a>
-                        <a href="#">More</a>
+                <div class="dropdownHitbox">
+                    <div class="dropdown">
+                        <div class="nestedDropDownHost">
+                            <a href="#" class = "name">Math</a>
+                            <div class="nestedDropdownHitbox"></div>
+                            <div id="dropdown" class="dropdown nestedDropdown">
+                                <a href="#">Mathematical Investigations - I/II</a>
+                                <a href="#">Mathematical Investigations - II</a>
+                                <a href="#">Mathematical Investigations - III</a>
+                                <a href="#">Mathematical Investigations - IV</a>
+                                <a href="#">BC Calculus 1</a>
+                                <a href="#">BC Calculus 2</a>
+                                <a href="#">BC Calculus 3</a>
+                                <a href="#">Multivariable Calculus</a>
+                                <a href="#">Linear Algebra</a>
+                                <a href="#">Statistics</a>
+                                <a href="#">Discrete Mathematics</a>
+                            </div>
+                        </div>
+                        <div class="nestedDropDownHost">
+                            <a href="#" class = "name">Science</a>
+                            <div class="nestedDropdownHitbox"></div>
+                            <div id="dropdown" class="dropdown nestedDropdown">
+                                <p id = "textFormat">Physics Courses</p>
+                                <a href="#">SI-Physics</a>
+                                <a href="#">Physics Sound and Light</a>
+                                <a href="#">Modern Physics</a>
+                                <a href="#">Physics: Calculus based Mechanics</a>
+                                <a href="#">Physics: Calculus based Electricity and Magnetism</a>
+                                <p id = "textFormat">Chemistry Courses</p>
+                                <a href="#">SI-Chemistry</a>
+                                <a href="#">Medicinal Chemistry</a>
+                                <a href="#">Biochemistry</a>
+                                <a href="#">Advanced Chemistry</a>
+                                <a href="#">Environmental Chemistry</a>
+                                <a href="#">Organic Chemistry</a>
+                                <p id = "textFormat">Other</p>
+                                <a href="#">Planetary Science</a>
+                                <a href="#">Engineering</a>
+                            </div>
+                        </div>
+                        <div class="nestedDropDownHost">
+                            <a href="#" class = "name">Computer Science</a>
+                            <div class="nestedDropdownHitbox"></div>
+                            <div id="dropdown" class="dropdown nestedDropdown">
+                                <a href="#">Computer Science Inquiry</a>
+                                <a href="#">Object Oriented Programming</a>
+                                <a href="#">Advanced Programming</a>
+                                <a href="#">Web Technologies</a>
+                                <a href="#">Android App Development</a>
+                                <a href="#">CS Seminar: Machine Learning</a>
+                                <a href="#">Linux and Android Apps</a>
+                            </div>
+                        </div>
+                        <div class="nestedDropDownHost">
+                            <a href="#" class = "name">Language</a>
+                            <div class="nestedDropdownHitbox"></div>
+                            <div id="dropdown" class="dropdown nestedDropdown">
+                                <a href="#">French</a>
+                                <a href="#">Spanish</a>
+                                <a href="#">German</a>
+                                <a href="#">Mandarin</a>
+                            </div>
+                        </div>
+                        <div class="nestedDropDownHost">
+                            <a href="#">Wellness</a>
+                        </div>
                     </div>
                 </div>  
             </div>
@@ -40,6 +105,49 @@
             <a id = "SignIn" href = "SignIn.html">
                 Sign In
             </a>
+        </div>
+        <div class = "pageContainer">
+            <div class = "container1">
+                <div id = "textLoc">
+                    <h1>Tutoring Made <span id="GreyText">Easy.</span> </h1>
+                    <div id = "ImageTitle">
+                        <img id = "OtherStats" src = "Group 7138.png">
+                    </div>
+                </div>
+                <div id = "TitleImage">
+                    <img src = "Report_Card.png">
+                </div>
+            </div>
+        </div>
+        <div class = "pageContainer">
+            <div class = "container1" id = "container2">
+                <div id = "TitleImage">
+                    <img src = "casual-life-3d-man-sleeping-on-laptop 1.png">
+                </div>
+                <div id = "textLoc">
+                    <h1>Still stuck on that one problem? </h1>
+                </div>
+            </div>
+        </div>
+        <div class = "pageContainer">
+            <div class = "container1" id = "container3">
+                <div id = "textLoc">
+                    <h1>Too afraid to ask for help?</h1>
+                </div>
+                <div id = "TitleImage">
+                    <img src = "casual-life-3d-young-man-sitting-on-bench-with-phone-in-his-hands-1 1.png">
+                </div>
+            </div>
+        </div>
+        <div class = "pageContainer">
+            <div class = "container1" id = "container4">
+                <div id = "TitleImage">
+                    <img src = "casual-life-3d-girl-and-boy-working-on-computer 1.png">
+                </div>
+                <div id = "textLoc">
+                    <h1>Sign up to work with a peer tutor today!</h1>
+                </div>
+            </div>
         </div>
     </body>
 </html>
