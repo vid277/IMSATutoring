@@ -1,5 +1,5 @@
 html, body {
-    background-color: #6C75C3;
+    background-color: white;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -13,6 +13,7 @@ html, body {
     font-family: "Poppins";
 }
 
+
 .NavBar{
     display: flex;
     background-color: hsl(0, 0%, 100%);
@@ -22,8 +23,8 @@ html, body {
     animation-duration: 0.4s;
     animation-timing-function: ease-out;
     padding: 0%;
-    border-width: 0px;
-    border-bottom-width: 3px;
+    border: solid 0px rgb(86, 85, 85);
+    border-bottom: solid 3px rgb(80, 76, 76);
 }
 
 .NavBar, .dropdownHost, .feedbackMenu, .helpMenu, a{
@@ -66,6 +67,7 @@ html, body {
     font-weight: 500;
     flex-flow: column nowrap;
     max-height: 65vh;
+    border: solid 3px rgb(80, 76, 76);
 }
 
 .dropdownHitbox {
@@ -176,142 +178,4 @@ html, body {
         color: black;
         border-bottom: solid 2px;
         border-radius: 0px;
-    }
-
-    .pageContainer {
-        width: 100%;
-        margin: 0% !important;
-    }
-
-    .container1{
-        display: grid;
-        grid-template-rows: auto 5fr;
-        grid-template-areas: "Title Image";
-        margin: 0% !important;
-    }
-
-    #textLoc{
-        grid-area: Title;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
-    .container1 #textLoc h1{
-        color: white;
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 60px;
-        text-align: left;
-        margin: 1px;
-        align-items: flex-end;
-        flex-direction: column;
-        font-weight: 700;
-    }
-
-    .container1 #textLoc #GreyText{
-        color: rgb(7, 7, 7);
-        font-weight: 800;
-    }
-
-    #TitleImage{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    #TitleImage img{
-        grid-area: Image;
-        width: 100%;
-        height: 100%;
-        justify-content: flex-end;
-    }
-
-    #OtherStats{
-        height: 80%;
-        width: 98%;
-    }
-
-    #imageTitle{
-        width: 100%;
-        height: 100%;
-        margin: 0%;
-    }
-    #SignUpButton{
-        width: 20%;
-        height: 10%;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(38, 34, 34);
-        border-radius: 20px;
-        color: white;
-        font-size: medium;
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    #container2{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center !important;
-        margin: 2%;
-        padding: 1.5%;
-        background-color: rgb(38, 34, 34);
-        justify-content: space-between !important;
-    }
-
-    #container2 h1{
-        font-size: 55px !important;
-        margin: 5%;
-    }
-
-    
-    #container2 #TitleImage img{
-        height: 100%;
-        width: 100%;
-    }
-
-    #container4{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center !important;
-        margin: 2%;
-        padding: 1.5%;
-        background-color: rgb(38, 34, 34);
-        justify-content: space-between !important;
-    }
-
-    #container4 h1{
-        font-size: 55px !important;
-        margin: 5%;
-    }
-
-    
-    #container4 #TitleImage img{
-        height: 100%;
-        width: 100%;
-    }
-
-    #container3{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center !important;
-        margin: 2%;
-        padding: 1.5%;
-        background-color: #6C75C3;
-        justify-content: space-between !important;
-    }
-
-    #container3 h1{
-        font-size: 55px !important;
-        margin: 5%;
-    }
-
-    
-    #container3 #TitleImage img{
-        height: 100%;
-        width: 100%;
     }
