@@ -98,24 +98,23 @@ font-family: "Poppins";}
     width: 10%;
 }
 
-input[type=submit]{
-    display: flex;
-        flex-direction: column;
-        font-family: "Poppins";
-        justify-content: column;
-        align-items: center;
-        background: transparent;
-        border: 0px !important;
-        width: 32vw !important;
-        height: 7vh !important;
-        border-radius: 5px !important;
-        background-color: rgb(93, 170, 244) !important;
-        color: white;
-        font-size: large;
-        text-align: center;
-        margin-bottom: 0.5% !important;
-        vertical-align: center;
-        padding-top: 10px !important;
+.Textbox button{
+    background-color: transparent;
+    border: solid rgba(0, 0, 0, 0.361);
+    border-radius: 5px;
+    width: 50%;
+    font-size: medium;
+    padding: 1.25%;
+    background-color: hsl(234, 42%, 59%);
+    color: white;
+    transition: 0.3s;
+    -webkit-animation: 0.3s;
+    -moz-animation: 0.3s;
+}
+
+#submitly:hover{
+    background-color: white;
+    color: rgb(0, 0, 0);
 }
 
 input:focus { 
