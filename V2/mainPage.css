@@ -13,6 +13,12 @@ html, body {
     font-family: "Poppins";
 }
 
+@font-face {
+    font-family: 'cera-round-pro';
+    src: url('cera-round-pro-cufonfonts-webfont\TypeMates  CeraRoundProRegular.woff') format('woff2'), url('cera-round-pro-cufonfonts-webfont\TypeMates  CeraRoundProRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .NavBar{
     display: flex;
@@ -167,15 +173,67 @@ html, body {
     border-radius: 10px;
   }
 
-    #textFormat{
-        font-weight: 700;
-        border-bottom: solid 2px;
-        width: auto;
-    }
+#textFormat{
+    font-weight: 700;
+    border-bottom: solid 2px;
+    width: auto;
+}
 
-    #textFormat:hover{
-        background-color: white;
-        color: black;
-        border-bottom: solid 2px;
-        border-radius: 0px;
-    }
+#textFormat:hover{
+    background-color: white;
+    color: black;
+    border-bottom: solid 2px;
+    border-radius: 0px;
+}
+
+.pageContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.pageContainer #container1 {
+    width: 100%;
+    height: 100%;
+    background-image: url(hero-icon-bg.svg);
+    background-repeat: round;
+    background-size: contain;
+    display: flex;
+}
+
+.pageContainer #container1 #mainPageText {
+    background-color: white;
+    border-radius: 20px;
+    margin: 5%;
+    width: 100%;
+    height: 70% !important;
+    height: max-content;
+    display: flex;    
+    align-items: center;
+}
+
+.pageContainer #container1 #mainPageText #innerText {
+    padding: 10%;
+}
+
+.pageContainer #container1 #mainPageText #innerText h1 {
+    text-align: left;
+    font-size: 40px;
+    margin: 1.5%;
+}
+
+.pageContainer #container1 #mainPageText #innerText h2 {
+    margin: 1.5%;
+}
+
+#imageTitle{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1%;
+}
+
+#imageTitle img{
+    width: 150%;
+    height: 70%;
+    justify-content: center;
+}
