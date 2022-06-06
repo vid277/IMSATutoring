@@ -9,7 +9,7 @@
         margin: 1;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'proxima_novaregular';
+        font-family: 'proxima_qnovaregular';
     }
     
     body {
@@ -67,6 +67,7 @@
         padding: 6px 15px;
         color: rgb(44, 43, 43);
         margin-left: 5px;
+        overflow: hidden;
     }
     
     #indexheader span a:hover {
