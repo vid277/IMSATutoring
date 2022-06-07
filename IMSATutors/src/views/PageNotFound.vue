@@ -8,6 +8,8 @@
     <img src="\src\assets\2663517.jpg">
     <h1>404 - Page not found</h1>
     <p> The page you are looking for might have been temporarily removed, had its name changed, or is temporarily unavailable </p>
+    
+    <!--ToDo: Make it return home-->
     <button class="buttonClickable3d" role="button">Return Home</button>
     </div>
    </div>
