@@ -44,12 +44,7 @@ export default {
         <span id="whitesign" style="color: rgb(255, 255, 255);"><a href="SignIn.html">Sign-in</a></span>
         <span id="bluesign" style="color: rgb(255, 255, 255)"><a href="SignUp.html">Sign-up</a></span>
     </header>
-    </div>
-    <div v-else class = "mobileMessage">
-      <h2> Sorry, this app is not supported on Mobile Devices </h2>
-      <p> To use this app, please switch to a computer or tablet </p>
-  </div>
-<main>
+    <main>
         <div id="textcontent">
             <h2><b>Sign Up for Free</b></h2>
             <p2><b>Peer-to-peer tutoring</b></p2>
@@ -57,7 +52,6 @@ export default {
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> 100% free–for students, parents, and teachers.</p3>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Used across the IMSA community</p3>
         </div>
-
         <div id="sign-up-form">
             <form>
                 <label id="label">Username: <br><input type="text" id = "Username" placeholder="  Create a username" class = "text-content" required></label>
@@ -73,6 +67,11 @@ export default {
             </p4>
         </div>
     </main>
+    </div>
+    <div v-else class = "mobileMessage">
+      <h2> Sorry, this app is not supported on Mobile Devices </h2>
+      <p> To use this app, please switch to a computer or tablet </p>
+  </div>
 </template>
 
 <style>
