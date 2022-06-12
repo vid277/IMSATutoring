@@ -1,742 +1,256 @@
+<script setup>
+    import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+<script>
+export default {
+    data(){
+      return {
+        isMobile: null,
+      }
+    },
+    created (){
+      this.checkScreenSize();
+      window.addEventListener("resize", this.checkScreenSize);
+    },
+    methods: {
+      checkScreenSize(){
+        const constWidth = window.innerWidth;
+        if (constWidth <= 750){
+          this.isMobile = true;
+          return;
+        }
+  
+        this.isMobile = false;
+      }
+    }
+  }
+</script>
+
 <template>
-<header class="cd-header">
-   <h1>Content Filter</h1>
-</header>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="\src\assets\commons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-<main class="cd-main-content">
-   <div class="cd-tab-filter-wrapper">
-      <div class="cd-tab-filter">
-         <ul class="cd-filters">
-            <li class="placeholder"> 
-               <a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
-            </li> 
-            <li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-            <li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-            <li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
-         </ul> <!-- cd-filters -->
-      </div> <!-- cd-tab-filter -->
-   </div> <!-- cd-tab-filter-wrapper -->
-
-   <section class="cd-gallery">
-      <ul>
-         <li class="mix color-1 check1 radio2 option3"><img src="img/img-1.jpg" alt="Image 1"></li>
-         <li class="mix color-2 check2 radio2 option2"><img src="img/img-2.jpg" alt="Image 2"></li>
-         <li><!-- ... --></li>
-         <li class="gap"></li>
-      </ul>
-      <div class="cd-fail-message">No results found</div>
-   </section> <!-- cd-gallery -->
-
-   <div class="cd-filter">
-      <form>
-         <div class="cd-filter-block">
-            <h4>Block title</h4>
-        
-            <div class="cd-filter-content">
-               <!-- filter content -->
-            </div> <!-- cd-filter-content -->
-         </div> <!-- cd-filter-block -->
-      </form>
-
-      <a href="#0" class="cd-close">Close</a>
-   </div> <!-- cd-filter -->
-
-   <a href="#0" class="cd-filter-trigger">Filters</a>
-</main> <!-- cd-main-content -->
+<div v-if="!isMobile">
+    <header id="indexheader">
+      <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
+      <span><a href="tutor.html">Courses</a></span>
+      <span><a href="request.html">Become a Tutor</a></span>
+      <span><a href="contact.html">Help</a></span>
+      <span style="flex-grow: 100000"></span>
+      <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
+      <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
+    </header>
+    <body>
+    <main>
+      <div id="wrapper">
+        <div class = "filterMenu">
+          <fieldset>
+            <h3><span>🗃️</span>Filter Menu</h3>
+            <h4>Search by Tutor:</h4>
+            <div class="search">
+              <form>
+                  <input type="text"
+                      placeholder="Type to start searching..."
+                      name="search"
+                      maxlength="25"     
+                  >
+              </form>
+            </div>
+            <h4>Filter by Hall: </h4>
+            <div>
+              <input type="checkbox" id="1501" name="1501">
+              <label for="1501">1501</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1502" name="1502">
+              <label for="1502">1502</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1503" name="1503">
+              <label for="1503">1503</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">1504</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1505" name="1505">
+              <label for="1505">1505</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1506" name="1506">
+              <label for="1506">1506</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1507" name="1507">
+              <label for="1507">1507</label>
+            </div>
+            <h4>Filter by Urgency: </h4>
+            <div>
+              <input type="checkbox" id="1501" name="1501">
+              <label for="1501">30 minutes</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1502" name="1502">
+              <label for="1502">1 hour</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1503" name="1503">
+              <label for="1503">Today</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">Tomorrow</label>
+            </div>
+            <h4>Filter by Availability: </h4>
+            <div>
+              <input type="checkbox" id="1501" name="1501">
+              <label for="1501">Monday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1502" name="1502">
+              <label for="1502">Tuesday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1503" name="1503">
+              <label for="1503">Wednesday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">Thursday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">Friday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">Saturday</label>
+            </div>
+            <div>
+              <input type="checkbox" id="1504" name="1504">
+              <label for="1504">Sunday</label>
+            </div>
+          </fieldset>
+        </div>
+        <br>
+        <br>
+      </div>
+      <div class = "mainTextPlace">
+        <h2>Hi</h2>
+      </div>
+    </main>
+    </body>
+</div>
+<div v-else class = "mobileMessage">
+  <h2> Sorry, this app is not supported on Mobile Devices </h2>
+  <p> To use this app, please switch to a computer or tablet </p>
+</div>
 </template>
 
 <style>
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, main {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+@font-face {
+    font-family: 'proxima_nova';
+    src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+* {
+  font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
+  margin: 0%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0%;
 }
 
-html {
-  font-size: 62.5%;
+#indexheader {
+  position: relative !important;
 }
 
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main {
+  justify-content: flex-start;
+  margin-top:  0px !important;
+  padding: 0%;
 }
 
-body {
-  font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
-  color: #331d35;
-  background-color: #e7e7e7;
-}
-
-a {
-  color: #41307c;
-  text-decoration: none;
-}
-
-/* -------------------------------- 
-
-Main Components 
-
--------------------------------- */
-.cd-header {
-  position: relative;
-  height: 150px;
-  background-color: #331d35;
-}
-.cd-header h1 {
-  color: #ffffff;
-  line-height: 150px;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: 300;
-}
-@media only screen and (min-width: 1170px) {
-  .cd-header {
-    height: 180px;
-  }
-  .cd-header h1 {
-    line-height: 180px;
-  }
-}
-
-.cd-main-content {
-  position: relative;
-  min-height: 100vh;
-}
-.cd-main-content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.cd-main-content.is-fixed .cd-tab-filter-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.cd-main-content.is-fixed .cd-gallery {
-  padding-top: 76px;
-}
-.cd-main-content.is-fixed .cd-filter {
-  position: fixed;
+#wrapper {
   height: 100vh;
-  overflow: hidden;
-}
-.cd-main-content.is-fixed .cd-filter form {
-  height: 100vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.cd-main-content.is-fixed .cd-filter-trigger {
-  position: fixed;
-}
-@media only screen and (min-width: 768px) {
-  .cd-main-content.is-fixed .cd-gallery {
-    padding-top: 90px;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-main-content.is-fixed .cd-gallery {
-    padding-top: 100px;
-  }
+  border: solid 0px #d9def9;
+  border-right: 2px solid rgb(203, 213, 224);
+  overflow-y: auto !important;
 }
 
-/* -------------------------------- 
-
-xtab-filter 
-
--------------------------------- */
-.cd-tab-filter-wrapper {
-  background-color: #ffffff;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  z-index: 1;
-}
-.cd-tab-filter-wrapper:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.cd-tab-filter {
-  /* tabbed navigation style on mobile - dropdown */
+.filterMenu {
+  width: max-content;
+  padding: 25px;
+  padding-right: 45px;
   position: relative;
-  height: 50px;
-  width: 140px;
-  margin: 0 auto;
-  z-index: 1;
-}
-.cd-tab-filter::after {
-  /* small arrow icon */
-  content: '';
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  bottom: auto;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url("../img/cd-icon-arrow.svg") no-repeat center center;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-  pointer-events: none;
-}
-.cd-tab-filter ul {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-  box-shadow: inset 0 -2px 0 #41307c;
-}
-.cd-tab-filter li {
-  display: none;
-}
-.cd-tab-filter li:first-child {
-  /* this way the placehodler is alway visible */
-  display: block;
-}
-.cd-tab-filter a {
-  display: block;
-  /* set same size of the .cd-tab-filter */
-  height: 50px;
-  width: 140px;
-  line-height: 50px;
-  padding-left: 14px;
-}
-.cd-tab-filter a.selected {
-  background: #41307c;
-  color: #ffffff;
-}
-.cd-tab-filter.is-open::after {
-  /* small arrow rotation */
-  -webkit-transform: translateY(-50%) rotate(-180deg);
-  -moz-transform: translateY(-50%) rotate(-180deg);
-  -ms-transform: translateY(-50%) rotate(-180deg);
-  -o-transform: translateY(-50%) rotate(-180deg);
-  transform: translateY(-50%) rotate(-180deg);
-}
-.cd-tab-filter.is-open ul {
-  box-shadow: inset 0 -2px 0 #41307c, 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-.cd-tab-filter.is-open ul li {
-  display: block;
-}
-.cd-tab-filter.is-open .placeholder a {
-  /* reduces the opacity of the placeholder on mobile when the menu is open */
-  opacity: .4;
-}
-@media only screen and (min-width: 768px) {
-  .cd-tab-filter {
-    /* tabbed navigation style on medium devices */
-    width: auto;
-    cursor: auto;
-  }
-  .cd-tab-filter::after {
-    /* hide the arrow */
-    display: none;
-  }
-  .cd-tab-filter ul {
-    background: transparent;
-    position: static;
-    box-shadow: none;
-    text-align: center;
-  }
-  .cd-tab-filter li {
-    display: inline-block;
-  }
-  .cd-tab-filter li.placeholder {
-    display: none !important;
-  }
-  .cd-tab-filter a {
-    display: inline-block;
-    padding: 0 1em;
-    width: auto;
-    color: #9a9a9a;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 1.3rem;
-  }
-  .no-touch .cd-tab-filter a:hover {
-    color: #41307c;
-  }
-  .cd-tab-filter a.selected {
-    background: transparent;
-    color: #41307c;
-    /* create border bottom using box-shadow property */
-    box-shadow: inset 0 -2px 0 #41307c;
-  }
-  .cd-tab-filter.is-open ul li {
-    display: inline-block;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-tab-filter {
-    /* tabbed navigation on big devices */
-    width: 100%;
-    float: right;
-    margin: 0;
-    -webkit-transition: width 0.3s;
-    -moz-transition: width 0.3s;
-    transition: width 0.3s;
-  }
-  .cd-tab-filter.filter-is-visible {
-    /* reduce width when filter is visible */
-    width: 80%;
-  }
 }
 
-/* -------------------------------- 
-
-xgallery 
-
--------------------------------- */
-.cd-gallery {
-  padding: 26px 5%;
-  width: 100%;
-}
-.cd-gallery li {
-  margin-bottom: 1.6em;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  display: none;
-}
-.cd-gallery li.gap {
-  /* used in combination with text-align: justify to align gallery elements */
-  opacity: 0;
-  height: 0;
-  display: inline-block;
-}
-.cd-gallery img {
-  display: block;
-  width: 100%;
-}
-.cd-gallery .cd-fail-message {
-  display: none;
+.filterMenu h3 {
   text-align: center;
-}
-@media only screen and (min-width: 768px) {
-  .cd-gallery {
-    padding: 40px 3%;
-  }
-  .cd-gallery ul {
-    text-align: justify;
-  }
-  .cd-gallery ul:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .cd-gallery li {
-    width: 48%;
-    margin-bottom: 2em;
-  }
-}
-@media only screen and (min-width: 1170px) {
-  .cd-gallery {
-    padding: 50px 2%;
-    float: right;
-    -webkit-transition: width 0.3s;
-    -moz-transition: width 0.3s;
-    transition: width 0.3s;
-  }
-  .cd-gallery li {
-    width: 23%;
-  }
-  .cd-gallery.filter-is-visible {
-    /* reduce width when filter is visible */
-    width: 80%;
-  }
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: solid 2px #d9def9;
 }
 
-/* -------------------------------- 
+.filterMenu h4 {
+  font-weight: bold;
+  margin-top: 13px;
+}
 
-xfilter 
-
--------------------------------- */
-.cd-filter {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 280px;
+#wrapper .filterMenu fieldset{
+  border: solid 0px;
+  justify-content: flex-start;
+  width: max-content;
   height: 100%;
-  background: #ffffff;
-  box-shadow: 4px 4px 20px transparent;
-  z-index: 2;
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 0.3s, box-shadow 0.3s;
-  -moz-transition: -moz-transform 0.3s, box-shadow 0.3s;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.cd-filter::before {
-  /* top colored bar */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  width: 100%;
-  background-color: #41307c;
-  z-index: 2;
-}
-.cd-filter form {
-  padding: 70px 20px;
-}
-.cd-filter .cd-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 50px;
-  line-height: 50px;
-  width: 60px;
-  color: #ffffff;
-  font-size: 1.3rem;
-  text-align: center;
-  background: #37296a;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  z-index: 3;
-}
-.no-touch .cd-filter .cd-close:hover {
-  background: #32255f;
-}
-.cd-filter.filter-is-visible {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  transform: translateX(0);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
-}
-.cd-filter.filter-is-visible .cd-close {
-  opacity: 1;
-}
-@media only screen and (min-width: 1170px) {
-  .cd-filter {
-    width: 20%;
-  }
-  .cd-filter form {
-    padding: 70px 10%;
-  }
 }
 
-.cd-filter-trigger {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 50px;
-  line-height: 50px;
-  width: 60px;
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  color: transparent;
-  white-space: nowrap;
-  background: transparent url("../img/cd-icon-filter.svg") no-repeat center center;
-  z-index: 3;
-}
-.cd-filter-trigger.filter-is-visible {
-  pointer-events: none;
-}
-@media only screen and (min-width: 1170px) {
-  .cd-filter-trigger {
-    width: auto;
-    left: 2%;
-    text-indent: 0;
-    color: #9a9a9a;
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: 700;
-    padding-left: 24px;
-    background-position: left center;
-    -webkit-transition: color 0.3s;
-    -moz-transition: color 0.3s;
-    transition: color 0.3s;
-  }
-  .no-touch .cd-filter-trigger:hover {
-    color: #41307c;
-  }
-  .cd-filter-trigger.filter-is-visible, .cd-filter-trigger.filter-is-visible:hover {
-    color: #ffffff;
-  }
+#wrapper .filterMenu div input {
+  margin: 0.6rem;
 }
 
-/* -------------------------------- 
-
-xcustom form elements 
-
--------------------------------- */
-.cd-filter-block {
-  margin-bottom: 1.6em;
-}
-.cd-filter-block h4 {
-  /* filter block title */
-  position: relative;
-  margin-bottom: .2em;
-  padding: 10px 0 10px 20px;
-  color: #9a9a9a;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.3rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-}
-.no-touch .cd-filter-block h4:hover {
-  color: #41307c;
-}
-.cd-filter-block h4::before {
-  /* arrow */
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  background: url("../img/cd-icon-arrow.svg") no-repeat center center;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-}
-.cd-filter-block h4.closed::before {
-  -webkit-transform: translateY(-50%) rotate(-90deg);
-  -moz-transform: translateY(-50%) rotate(-90deg);
-  -ms-transform: translateY(-50%) rotate(-90deg);
-  -o-transform: translateY(-50%) rotate(-90deg);
-  transform: translateY(-50%) rotate(-90deg);
-}
-.cd-filter-block input, .cd-filter-block select,
-.cd-filter-block .radio-label::before,
-.cd-filter-block .checkbox-label::before {
-  /* shared style for input elements */
-  font-family: "Open Sans", sans-serif;
-  border-radius: 0;
-  background-color: #ffffff;
-  border: 2px solid #e6e6e6;
-}
-.cd-filter-block input[type='search'],
-.cd-filter-block input[type='text'],
-.cd-filter-block select {
-  width: 100%;
-  padding: .8em;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  box-shadow: none;
-}
-.cd-filter-block input[type='search']:focus,
-.cd-filter-block input[type='text']:focus,
-.cd-filter-block select:focus {
-  outline: none;
-  background-color: #ffffff;
-  border-color: #41307c;
-}
-.cd-filter-block input[type='search'] {
-  /* custom style for the search element */
-  border-color: transparent;
-  background-color: #e6e6e6;
-  /* prevent jump - ios devices */
-  font-size: 1.6rem !important;
-}
-.cd-filter-block input[type='search']::-webkit-search-cancel-button {
-  display: none;
-}
-.cd-filter-block .cd-select {
-  /* select element wrapper */
-  position: relative;
-}
-.cd-filter-block .cd-select::after {
-  /* switcher arrow for select element */
-  content: '';
-  position: absolute;
-  z-index: 1;
-  right: 14px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: url("../img/cd-icon-arrow.svg") no-repeat center center;
-  pointer-events: none;
-}
-.cd-filter-block select {
-  cursor: pointer;
-  font-size: 1.4rem;
-}
-.cd-filter-block select::-ms-expand {
-  display: none;
-}
-.cd-filter-block .list li {
-  position: relative;
-  margin-bottom: .8em;
-}
-.cd-filter-block .list li:last-of-type {
-  margin-bottom: 0;
-}
-.cd-filter-block input[type=radio],
-.cd-filter-block input[type=checkbox] {
-  /* hide original check and radio buttons */
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-  z-index: 2;
-}
-.cd-filter-block .checkbox-label,
-.cd-filter-block .radio-label {
-  padding-left: 24px;
-  font-size: 1.4rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.cd-filter-block .checkbox-label::before, .cd-filter-block .checkbox-label::after,
-.cd-filter-block .radio-label::before,
-.cd-filter-block .radio-label::after {
-  /* custom radio and check boxes */
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.cd-filter-block .checkbox-label::before,
-.cd-filter-block .radio-label::before {
-  width: 16px;
-  height: 16px;
-  left: 0;
-}
-.cd-filter-block .checkbox-label::after,
-.cd-filter-block .radio-label::after {
-  /* check mark - hidden */
-  display: none;
-}
-.cd-filter-block .checkbox-label::after {
-  /* check mark style for check boxes */
-  width: 16px;
-  height: 16px;
-  background: url("../img/cd-icon-check.svg") no-repeat center center;
-}
-.cd-filter-block .radio-label::before,
-.cd-filter-block .radio-label::after {
-  border-radius: 50%;
-}
-.cd-filter-block .radio-label::after {
-  /* check mark style for radio buttons */
-  width: 6px;
-  height: 6px;
-  background-color: #ffffff;
-  left: 5px;
-}
-.cd-filter-block input[type=radio]:checked + label::before,
-.cd-filter-block input[type=checkbox]:checked + label::before {
-  border-color: #41307c;
-  background-color: #41307c;
-}
-.cd-filter-block input[type=radio]:checked + label::after,
-.cd-filter-block input[type=checkbox]:checked + label::after {
-  display: block;
+#wrapper .filterMenu div label {
+  margin: 0.1 rem;
 }
 
-@-moz-document url-prefix() {
-  /* hide custom arrow on Firefox - select element */
-  .cd-filter-block .cd-select::after {
-    display: none;
-  }
+.search input[type=text]{
+  width: fit-content;
+  height: 35px;
+  border-radius: 5px;
+  border: solid 1px;
+  padding: 5px;
+  font-size: small;
+}
+
+.search input{
+  margin: 0% !important;
+}
+
+.search {
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(203, 213, 224);
+}
+
+.mainTextPlace {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 </style>
-
-<script>
-
-</script>
