@@ -1,4 +1,4 @@
-This is a project to help build a peer tutoring website for IMSA (Illinois Math and Science Academy)
+<h3>This is a project to help build a peer tutoring website for IMSA (Illinois Math and Science Academy)</h3>
 
 To-Do (Front-End):
 - Create a tutor booking page.
