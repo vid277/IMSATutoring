@@ -1,6 +1,6 @@
 <h3>This is a project to help build a peer tutoring website for IMSA (Illinois Math and Science Academy)</h3>
 
-To-Do (Front-End):
+<b> To-Do (Front-End): </b>
 - Create a tutor booking page.
 - Create a tutor description page.
 - Create a page with a list of courses.
@@ -10,7 +10,7 @@ To-Do (Front-End):
 - Create a student/tutor dashboard.
 - Create and add a footer to each page.
 
-To-Do (Back-End):
+<b> To-Do (Back-End): </b>
 - Sign In with OAuth and Firebase
 - Sign Up with OAuth and Firebase
 - And much more...
