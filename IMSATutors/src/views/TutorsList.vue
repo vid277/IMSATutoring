@@ -20,7 +20,6 @@ export default {
           this.isMobile = true;
           return;
         }
-  
         this.isMobile = false;
       }
     }
@@ -141,7 +140,21 @@ export default {
         <br>
       </div>
       <div class = "mainTextPlace">
-        <h2>Hi</h2>
+      <div class = "innerBox">
+          <div class = "TextPlaceWrapper">
+              <h1>[Class Name]</h1>
+          </div>
+          <div class = "tutorCards">
+            <div class="card">
+              <img src="\src\assets\card-person.png" class="card-img-top" alt="...">
+              <h5 class="card-title">[Person Name]</h5>
+              <button href="#" class="btn btn-primary">Schedule</button>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
       </div>
     </main>
     </body>
@@ -174,23 +187,22 @@ export default {
 }
 
 main {
-  justify-content: flex-start;
   margin-top:  0px !important;
-  padding: 0%;
+  padding: 0% !important;
+  width: 100%;
+  height: 100%;
+  gap: 0rem !important;
 }
 
 #wrapper {
-  height: 100vh;
-  border: solid 0px #d9def9;
+  height: calc(100vh);
   border-right: 2px solid rgb(203, 213, 224);
   overflow-y: auto !important;
+  width: 25%;
 }
 
 .filterMenu {
-  width: max-content;
   padding: 25px;
-  padding-right: 45px;
-  position: relative;
 }
 
 .filterMenu h3 {
@@ -198,6 +210,7 @@ main {
   font-weight: bold;
   font-size: 20px;
   border-bottom: solid 2px #d9def9;
+  text-align: center;
 }
 
 .filterMenu h4 {
@@ -208,7 +221,6 @@ main {
 #wrapper .filterMenu fieldset{
   border: solid 0px;
   justify-content: flex-start;
-  width: max-content;
   height: 100%;
 }
 
@@ -217,16 +229,16 @@ main {
 }
 
 #wrapper .filterMenu div label {
-  margin: 0.1 rem;
+  margin: 0.6rem;
 }
 
 .search input[type=text]{
-  width: fit-content;
   height: 35px;
   border-radius: 5px;
   border: solid 1px;
   padding: 5px;
   font-size: small;
+  width: 100%;
 }
 
 .search input{
@@ -245,12 +257,84 @@ main {
   background: rgb(203, 213, 224);
 }
 
-.mainTextPlace {
+.mainTextPlace{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: calc(100vh);
+  width: 100%;
+}
+
+.mainTextPlace .innerBox {
+  width: 100%;
+  padding: 2%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mainTextPlace .innerBox .TextPlaceWrapper {
+  width: 100%;
+}
+
+.mainTextPlace .innerBox .TextPlaceWrapper h1 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(203, 213, 224);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.tutorCards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1%;
+  gap: 1em;
+}
+
+.card {
+  padding: 1.5em 4em 2.5em ;
+  border-radius: 2em;
+  text-align: center;
+  border: solid 2px;
+  border-color: rgb(203, 213, 224);
+  width: min-content !important;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  row-gap: 0.25em;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 50%;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-title {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+ 
+.card .btn {
+  border-radius: 15px;
+  background-color: rgb(203, 213, 224);
+  color: #000000;
+  padding: 0.75em 1.5em;
+  border: none;
+  margin-top:2%;
+}
+
+.card .btn:hover {
+  background-color: #d9def9;
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 </style>
