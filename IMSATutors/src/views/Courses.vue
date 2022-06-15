@@ -45,7 +45,9 @@ export default {
     </header>
     <body>
         <div class = "mainPageWrapper">
-            <div class = "innerBox"></div>
+            <div class = "innerBox">
+                <h2>Courses Offered:</h2>
+            </div>
         </div>
     </body>
 </div>
@@ -68,4 +70,25 @@ export default {
 #indexheader {
   position: relative !important;
 }
+
+.mainPageWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.innerBox{
+    margin: 1%;
+    width: 100%;
+    height: 100%;
+}
+
+.innerBox h2 {
+    font-weight: 500;
+    font-size: 25px;
+    border-bottom: solid 2px;
+    max-width: fit-content;
+    padding: 0%;
+    margin: 0%;
+}
+
 </style>
