@@ -1,5 +1,10 @@
 This is a project to help build a peer tutoring website for IMSA (Illinois Math and Science Academy)
 
+To-Run: 
+1. cd imsatutors
+2. npm i
+3. npm run dev
+
 To-Do (Front-End):
 - Create a tutor booking page.
 - Create a tutor description page.

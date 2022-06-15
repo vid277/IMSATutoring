@@ -302,6 +302,7 @@ main {
   text-align: center;
   border: solid 2px;
   border-color: rgb(203, 213, 224);
+  background-color: rgb(244, 241, 241);
   width: min-content !important;
   display: flex;
   flex-direction: column;
@@ -309,6 +310,7 @@ main {
   justify-content: center;
   align-items: center;
   row-gap: 0.25em;
+  transition: 0.3s;
 }
 
 .card img {
