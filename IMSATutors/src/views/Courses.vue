@@ -413,11 +413,11 @@ main {
 
 .card {
   padding: 1em 2em 1em;
-  border-radius: 25px;
+  border-radius: 10px;
   text-align: center;
   border: solid 2px;
   border-color: rgb(203, 213, 224);
-  background-color: rgb(244, 241, 241);
+  background-color: white;
   display: flex;
   height: fit-content;
   flex-direction: column;
