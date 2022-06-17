@@ -90,113 +90,195 @@ export default {
           </div>
           <div class = "textDiv">
             <h2>Math: </h2>
-            <div class = "courses mathCourses">
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - I/II</h5>
+            <div class = "cardList mathCards">
+              <div class="large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Mathematical Investigations</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>MI - I/II</h3>
+                    </div>
+                    <div class="card">
+                      <h3>MI - II</h3>
+                    </div>
+                    <div class="card">
+                      <h3>MI - III</h3>
+                    </div>
+                    <div class="card">
+                      <h3>MI - IV</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - II</h5>
+              </div>
+              <div class="large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Calculus</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>Calculus 1</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Calculus 2</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Calculus 3</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Multivariable Calculus</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - III</h5>
+              </div>
+              <div class="large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Other Courses</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>Number Theory</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Theory of Analysis</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - IV</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 1</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 2</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 3</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Multivariable Calculus</h5>
-                </div> 
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Number Theory</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Linear Algebra</h5>
-                </div>
+              </div>
             </div>
           </div>
-          </div>
-          <div class = "textDiv" style = "background-color: rgba(235, 206, 232, 0.556);">
+          <div style="margin-top: 2%" class = "textDiv">
             <h2>Science: </h2>
-            <div class = "courses scienceCourses">
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">SI - Chemistry</h5>
+            <div class = "cardList scienceCards">
+              <div class="scienceCard large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Chemistry</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>SI - Chemistry</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Advanced Chemistry 1</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Advanced Chemistry 2</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Organic Chemistry 1</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Organic Chemistry 2</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Medicinal Chemistry</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Survey of Organic Chemistry</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">SI - Physics</h5>
+              </div>
+              <div class="scienceCard large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Physics</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>SI - Physics</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Physics Sound and Light</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Physics: Electricity and Magnetism</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Physics: Calculus based Mechanics</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Modern Physics</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - III</h5>
+              </div>
+              <div class="scienceCard large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Other Science Courses</h5>
+                  <div class = "courses MI-Sequence">
+                    <div class="card">
+                      <h3>Advanced Biological Systems</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Biochemistry</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Planetary Science</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Engineering</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Computational Science</h3>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">MI - IV</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 1</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 2</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">BC - Calculus 3</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Multivariable Calculus</h5>
-                </div> 
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Number Theory</h5>
-                </div>
-            </div>
-            <div class="card">
-                <div class = "innerCard">
-                    <h5 class="card-title">Linear Algebra</h5>
-                </div>
+              </div>
             </div>
           </div>
+          <div style="margin-top: 2%" class = "textDiv">
+            <h2>Computer Science: </h2>
+            <div class = "cardList">
+              <div class="computerCards large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">Computer Science Courses</h5>
+                  <div class = "courses">
+                    <div class="card">
+                      <h3>Computer Science Inquiry</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Object Oriented Programming</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Advanced Programming</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="computerCards large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">CS Seminars</h5>
+                  <div class = "courses">
+                    <div class="card">
+                      <h3>Machine Learning</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Android Apps Development</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Linux and Cybersecurity</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blankCard large-card">
+
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 2%" class = "textDiv">
+            <h2>Wellness: </h2>
+            <div class = "cardList">
+              <div class="wellnessCard large-card">
+                <div class = "inner-card">
+                  <h5 class="card-title">General Wellness</h5>
+                  <div class = "courses">
+                    <div class="card">
+                      <h3>Moving and Learning</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="blankCard large-card">
+              </div>
+              <div class="blankCard large-card">
+              </div>
+            </div>
           </div>
         </div>
         <br>
@@ -329,15 +411,8 @@ main {
     padding: 1.75%;
 }
 
-.courses {
-    display: flex;
-    gap: 0.5em;
-    row-gap: 0.5em;
-    flex-wrap: wrap;
-}
-
 .card {
-  padding: 0em 1em 0em ;
+  padding: 1em 2em 1em;
   border-radius: 25px;
   text-align: center;
   border: solid 2px;
@@ -351,20 +426,16 @@ main {
   align-items: center;
   row-gap: 0.25em;
   transition: 0.3s;
+  width: 100%;
 }
 
-.card .innerCard {
-    width: 100%;
-    margin: 20px;
+.inner-card {
+  width: 100%;
 }
 
-.card .innerCard h5{
-    font-size: medium;
-}
-
-.card .card-title {
+.large-card .card-title {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 15px;
 }
 
 .card:hover {
@@ -373,18 +444,75 @@ main {
 }
 
 .textDiv {
-    padding: 1%;
-    background-color: rgb(153, 189, 227, 0.5);
-    margin-top: 1%;
-    border-radius: 5px;
+  margin: 1%;
 }
 
-.textDiv h2 {
-    font-weight: 700;
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 0.5%;
-    margin-bottom: 0.5%;
-    width: max-content;
+.textDiv h2{
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 1%;
+  margin-top: 10px;
+}
+
+.cardList {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1%;
+  gap: 1em;
+}
+
+.courses {
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+
+.large-card {
+  border-radius: 15px;
+  text-align: center;
+  border: solid 2px;
+  border-color: rgb(203, 213, 224);
+  background-color: rgb(240, 245, 251);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.25em;
+  transition: 0.3s;
+  padding: 1%;
+  flex: 1;
+}
+
+.inner-card {
+  width: 100%;
+  height: 100%;
+}
+
+.inner-card h5 {
+  padding: 0.5%;
+  margin-bottom: 1%;
+  font-size: 19px !important;
+}
+
+.scienceCard {
+  background-color: rgb(251, 240, 249);
+}
+
+.computerCards {
+  background-color: rgb(251, 249, 240)
+}
+
+.blankCard {
+  border: none;
+  background-color: white;
+}
+
+.wellnessCard {
+  background-color: rgb(240, 251, 246);
 }
 </style>
