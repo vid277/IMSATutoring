@@ -37,7 +37,7 @@ export default {
 <div v-if="!isMobile">
       <header id="indexheader">
         <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
-        <span><a href="tutor.html">Courses</a></span>
+        <span><router-link to="/Courses">Courses</router-link></span>
         <span><a href="request.html">Become a Tutor</a></span>
         <span><a href="contact.html">Help</a></span>
         <span style="flex-grow: 100000"></span>
