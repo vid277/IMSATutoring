@@ -2,7 +2,7 @@
 
 <b>To-Run:</b>
 1. cd imsatutors
-2. npm i
+2. npm i (Only needed when repo is first cloned/installed)
 3. npm run dev
 
 <b> To-Do (Front-End): </b>
