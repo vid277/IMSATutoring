@@ -27,11 +27,9 @@ export default {
 </script>
 
 <template>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="\src\assets\commons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="\src\assets\commons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div v-if="!isMobile">
     <header id="indexheader">
@@ -165,7 +163,7 @@ export default {
 </div>
 </template>
 
-<style>
+<style scoped>
 @font-face {
     font-family: 'proxima_nova';
     src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
@@ -178,7 +176,6 @@ export default {
   box-sizing: border-box;
   margin: 0%;
   overflow-x: hidden;
-  overflow-y: hidden;
   padding: 0%;
 }
 
@@ -192,6 +189,8 @@ main {
   width: 100%;
   height: 100%;
   gap: 0rem !important;
+  display: flex;
+  flex: 1;
 }
 
 #wrapper {

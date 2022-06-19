@@ -28,11 +28,9 @@ export default {
 </script>
 
 <template>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="\src\assets\commons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="\src\assets\commons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div v-if="!isMobile">
       <header id="indexheader">
@@ -72,7 +70,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 @font-face {
     font-family: 'proxima_nova';
     src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
@@ -88,70 +86,15 @@ export default {
   padding: 0%;
 }
 
-a{
-    text-decoration: none;
-    color: blue;
-}
-
-#indexheader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  gap: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-flow: row nowrap;
-  z-index: 10000;
-  height: 10vh;
-  background-color: #ffffff;
-  border: solid rgb(203, 213, 224) 0px;
-  border-bottom-width: 2px;
-}
-    
-#indexheader a {
-    text-decoration: none;
-    padding: 0px 10px 0px 15px;
-    color: rgb(44, 43, 43);
-    overflow: visible;
-    transition: 0.3s;
-}
-
-#indexheader span a:hover {
-    color: rgb(18, 120, 236);
-    transition: 0.3s;
-}
-
-#bluesign {
-    padding: 10px;
-}
-
-#bluesign a {
-    background-color: rgb(63, 123, 192);
-    color: white;
-    margin-right: 10px;
-    border-radius: 15px;
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#bluesign a:hover {
-  color: white !important;
-  background-color: rgb(47, 83, 125);
-}
-
-
 main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 3em;
-    padding: 2em 0.5em;
-    margin-top: 11vh;
+    gap: 3em !important;
+    padding: 2em 0.5em !important;
+    height: 100% !important;
+    margin-top: 11vh !important;
     min-width: 100%;
     min-height: 100%;
 }
@@ -163,7 +106,7 @@ main {
     align-items: baseline;
     justify-content: center;
     flex-wrap: nowrap;
-    gap: 1.5vh;
+    gap: 1.5vh !important;
 }
 
 #textcontent h2 {
@@ -240,6 +183,7 @@ main {
     height: 45px;
     width: 32vw;
     font-size: 15px;
+    padding: 2px;
 }
 
 #Email {
@@ -252,6 +196,7 @@ main {
     height: 45px;
     font-size: 15px;
     width: 32vw;
+    padding: 2px;
 }
 
 #Password {
@@ -264,6 +209,7 @@ main {
     height: 45px;
     font-size: 15px;
     width: 32vw;
+    padding: 2px;
 }
 
 #Submit {

@@ -1,8 +1,6 @@
 <template>
-  <head>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
   <link href="\src\assets\commons.css" rel="stylesheet">
-  </head>
    <div v-if="!isMobile">
   <div class="about">
     <img src="\src\assets\2663517.jpg">
@@ -20,7 +18,7 @@
 
 </template>
 
-<style>
+<style scoped>
 .about {
     display: flex;
     flex-direction: column;

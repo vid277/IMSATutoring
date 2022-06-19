@@ -27,11 +27,9 @@ export default {
 </script>
 
 <template>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="\src\assets\commons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link href="\src\assets\commons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div v-if="!isMobile">
     <header id="indexheader">
@@ -70,7 +68,7 @@ export default {
 </div>
 </template>
 
-<style>
+<style scoped>
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;

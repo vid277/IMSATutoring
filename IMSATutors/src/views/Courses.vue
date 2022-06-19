@@ -27,11 +27,9 @@ export default {
 </script>
 
 <template>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="\src\assets\commons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="\src\assets\commons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div v-if="!isMobile">
     <header id="indexheader">
@@ -138,6 +136,9 @@ export default {
                     </div>
                     <div class="card">
                       <h3>Theory of Analysis</h3>
+                    </div>
+                    <div class="card">
+                      <h3>Linear Algebra</h3>
                     </div>
                   </div>
                 </div>
@@ -257,7 +258,6 @@ export default {
                 </div>
               </div>
               <div class="blankCard large-card">
-
               </div>
             </div>
           </div>
@@ -315,6 +315,10 @@ main {
   width: 100%;
   height: 100%;
   gap: 0rem !important;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
 }
 
 #wrapper {
