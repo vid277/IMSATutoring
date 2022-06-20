@@ -9,7 +9,6 @@
 - Create a tutor description page (including workflow).
 - Design and create a home page.
 - Design and create a settings page along with user dashboard.
-- Link up the form to become a tutor. (later???).
 - Create a student/tutor dashboard.
 - Create and add a footer to each page.
 

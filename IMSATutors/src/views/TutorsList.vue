@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link href="\src\assets\commons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -164,13 +164,6 @@ export default {
 </template>
 
 <style scoped>
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
