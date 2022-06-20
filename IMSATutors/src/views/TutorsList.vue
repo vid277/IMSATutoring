@@ -263,6 +263,9 @@ main {
   align-items: center;
   height: calc(100vh);
   width: 100%;
+  background-image: url("../assets/Background.png");
+  background-repeat: repeat;
+  background-size: 500px;
 }
 
 .mainTextPlace .innerBox {
@@ -279,7 +282,7 @@ main {
 .mainTextPlace .innerBox .TextPlaceWrapper h1 {
   display: flex;
   justify-content: center;
-  background-color: rgb(203, 213, 224);
+  background-color: #cbd5e0;
   padding: 10px;
   border-radius: 5px;
   text-align: center;

@@ -513,7 +513,7 @@ main {
 
 .blankCard {
   border: none;
-  background-color: white;
+  background-color: transparent;
 }
 
 .wellnessCard {
