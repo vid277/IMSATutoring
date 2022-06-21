@@ -44,66 +44,55 @@ export default {
 </script>
 
 <template>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link href="\src\assets\commons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-
-<div v-if="!isMobile">
-    <header id="indexheader">
-      <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
-      <span><router-link to="/Courses">Courses</router-link></span>
-      <span><a href="request.html">Become a Tutor</a></span>
-      <span><router-link to="/help">Help</router-link></span>
-      <span style="flex-grow: 100000"></span>
-      <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
-      <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
-    </header>
-    <body>
     <main>
-        <h2> {Person Name} </h2>
+        <h2> Public Profile </h2>
         <div class = "mainTextArea">
             <div class = "publicProfile">
                 <div id="sign-up-form">
-                <div class="aboutmeDiv">
-                    <h3 id = "label">About Me:</h3>
-                    <p1 class = "aboutMe">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusantium rem ad molestiae, itaque architecto! Doloremque possimus ex, odio assumenda ratione laborum maiores, facere perferendis voluptatum mollitia hic molestias libero.
-                    </p1>
-                  </div>
-                  <div class = "tutorSubjectsDiv">
-                    <h3 id = "label">Subjects I Tutor:</h3>
-                    <p6 class = "tutoringSubjects">{subjects}</p6> 
-                  </div>
-                  <div id = "twotable">
-                    <div>                    
-                      <h3 id = "label">Hall:</h3>
-                      <p6 class = "hallNumber">{Hall Number}</p6>
-                    </div>
-                    <div>                    
-                      <h3 id = "label">Wing:</h3>
-                      <p6 class = "hallNumber">{Wing Number}</p6>
-                    </div>                  
-                    </div>
-                    <button href="#" class = "studentBookingLink" id = "Submit">Click here to schedule a time</button>
+                    <form>
+                        <label id="label" for="username">Name: <br><input type="text" id = "Username" placeholder="{{username}}" class = "text-content" name = "username"></label>
+                        <br>
+                        <label id="label" for="email">Email: <br><input type="email"  id = "Email" placeholder="{{email}}" class = "text-content" name = "email"></label>
+                        <br>
+                        <label id="label" for="password">Password: <br><input type="password"  id = "Password" placeholder="" class = "text-content" name = "password"></label>
+                        <br>
+                        <label id="label" for="textAreaBio">Bio: <br>
+                            <textarea name = "textAreaBio" rows="4"></textarea>                                    
+                        <br></label>
+                        <div class = "Bar2">
+                            <label id="label" for="hall">Hall: <br><input type="text"  id = "hall" placeholder="" class = "text-content" name = "hall"></label>
+                            <label id="label" for="wing">Wing: <br><input type="text"  id = "wing" placeholder="" class = "text-content" name = "wing"></label>
+                        </div>
+                        <label id="label" for = "remindLink">Calendly Meeting Link: <br><input type="url"  id = "Password" placeholder="{{remind link}}" class = "text-content" name = "remindLink"></label>
+                        <br>
+                        <b><input type="button" value="Update Information" id="updateButton"></b>
+                    </form>
                 </div>
                 <div class = "imageSelector">
-                      <div
-                          class="base-image-input"
-                        >
+                    <label id = "label">Profile Picture: </label>
+                    <div
+                        class="base-image-input"
+                        :style="{ 'background-image': `url(${imageData})` }"
+                        @click="chooseImage"
+                    >
                         <span
                             v-if="!imageData"
                             class="placeholder"
                         >
-                        Image Here
+                        Choose an Image
                         </span>
+                        <input
+                        class="file-input"
+                        ref="fileInput"
+                        type="file"
+                        @input="onSelectFile"
+                        >
                     </div>
                 </div>
             </div>
         </div> 
         <br>
     </main>
-    </body>
 </div>
 <div v-else class = "mobileMessage">
   <h2> Sorry, this app is not supported on Mobile Devices </h2>
@@ -111,14 +100,13 @@ export default {
 </div>
 </template>
 
-<style>
+<style scoped>
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
   margin: 0%;
   overflow-x: hidden;
   padding: 0%;
-  overflow-y: hidden;
 }
 
 #indexheader {
@@ -127,12 +115,11 @@ export default {
 }
 
 main {
-  margin-top:  0px !important;
-  padding: 0% !important;
-  width: 100%;
-  height: 100%;
-  gap: 0rem !important;
-  overflow-y: auto;
+    margin-top:  0px !important;
+    padding: 0% !important;
+    width: 100%;
+    height: 100%;
+    gap: 0rem !important;
 }
 
 ::-webkit-scrollbar {
@@ -177,20 +164,6 @@ main h2 {
     margin-top: 2%;
 }
 
-@media only screen and (max-width: 900px)  {
-  .publicProfile {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      margin-left: 2%;
-      margin-right: 2%;
-      overflow-y: auto !important;
-      margin-top: 2%;
-  }
-}
-
 .textSelector {
     width: 100%;
     height: 100%;
@@ -198,7 +171,24 @@ main h2 {
 
 label {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 17px;
+}
+
+.textSelector input[type="textbox"]
+
+.imageSelector {
+    width: 100%;
+    height: 100%;
+    margin: 2%;
+    margin-top: 0.5% !important;
+}
+ 
+textarea {
+    width: 100%;
+    padding: 2%;
+    border-radius: 8px;
+    border: solid rgb(203, 213, 224) 2px;
+    resize: none; 
 }
 
 form {
@@ -209,6 +199,7 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: column;
+    align-items: center;
     padding: 3%;
     height: fit-content;
     border-radius: 10px;
@@ -216,7 +207,6 @@ form {
     width: 75%;
     border: solid rgb(203, 213, 224) 2px;
     background-color: white;
-    row-gap: 0.5em;
 }
 
 #label {
@@ -230,6 +220,78 @@ form {
     font-weight: 700;
     color: black;
     width: 100%;
+    transition: 0.3s;
+}
+
+#Username {
+    border: solid 2px;
+    border-radius: 8px;
+    height: 10%;
+    flex-grow: 1;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    width: 32vw;
+    font-size: 15px;
+    padding: 2%;
+    width: 100%;
+}
+
+#Email {
+    border: solid 2px;
+    border-radius: 8px;
+    height: 10%;
+    flex-grow: 1;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    width: 100% !important;
+    padding: 2%;
+}
+
+#Password {
+    border: solid 2px;
+    border-radius: 8px;
+    height: 10%;
+    flex-grow: 1;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    width: 100%;
+    padding: 2%;
+}
+
+#updateButton {
+    border: 0px;
+    width: 100%;
+    height: 7vh;
+    border-radius: 5px;
+    background-color: rgb(93, 170, 244) !important;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin-bottom: 0.5%;
+    vertical-align: center;
+}
+
+#Password:focus-visible, #Password:active, #Password:focus {
+    border-color: rgb(92, 158, 235) !important;
+}
+
+#Password:hover {
+    border-color: rgb(92, 158, 235) !important;
+    transition: 0.3s;
+}
+
+#Username:hover{
+    border-color: rgb(92, 158, 235) !important;
+    transition: 0.3s;
+}
+
+#Email:hover {
+    border-color: rgb(92, 158, 235) !important;
     transition: 0.3s;
 }
 
@@ -339,37 +401,6 @@ textarea:hover {
     width: 100%;
 }
 
-h3 {
-  text-align: left;
-}
 
-#twotable {
-  display: flex;
-  gap: 1.5em;
-  align-items: flex-start;
-  margin-top: 2%;
-}
 
-.tutorSubjectsDiv {
-  margin-top: 2%;
-}
-
-#Submit {
-  border: 0px;
-  height: 7vh;
-  border-radius: 5px;
-  background-color: rgb(93, 170, 244) !important;
-  color: white;
-  font-size: large;
-  text-align: center;
-  margin-bottom: 0.5%;
-  vertical-align: center;
-  cursor: pointer;
-  margin-top: 2%;
-}
-
-#Submit:hover{
-  background-color: rgb(74, 132, 220) !important;
-    transition: 0.3s;
-}
 </style>

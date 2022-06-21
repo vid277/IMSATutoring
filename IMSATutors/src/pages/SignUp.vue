@@ -28,20 +28,6 @@ export default {
 </script>
 
 <template>
-    <title>Tutor Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-    <link href="\src\assets\commons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div v-if="!isMobile">
-      <header id="indexheader">
-        <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
-        <span><router-link to="/Courses">Courses</router-link></span>
-        <span><a href="request.html">Become a Tutor</a></span>
-        <span><router-link to="/help">Help</router-link></span>
-        <span style="flex-grow: 100000"></span>
-        <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
-        <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
-    </header>
     <main>
         <div id="textcontent">
             <h2><b>Sign Up for Free</b></h2>
@@ -65,21 +51,13 @@ export default {
             </p4>
         </div>
     </main>
-    </div>
-    <div v-else class = "mobileMessage">
-      <h2> Sorry, this app is not supported on Mobile Devices </h2>
-      <p> To use this app, please switch to a computer or tablet </p>
-  </div>
+
 </template>
 
 <style scoped>
 
 * {
-  font-family: 'Nunito', sans-serif;
-  box-sizing: border-box;
-  margin: 0%;
-  overflow-x: hidden;
-  padding: 0%;
+  overflow-y: hidden;
 }
 
 main {
