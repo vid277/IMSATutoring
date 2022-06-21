@@ -37,7 +37,7 @@ export default {
         <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
         <span><router-link to="/Courses">Courses</router-link></span>
         <span><a href="request.html">Become a Tutor</a></span>
-        <span><a href="contact.html">Help</a></span>
+        <span><router-link to="/help">Help</router-link></span>
         <span style="flex-grow: 100000"></span>
         <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
         <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>

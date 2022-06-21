@@ -33,7 +33,7 @@ export default {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div v-if="!isMobile">
-      <header id="indexheader">
+      <div id="indexheader">
         <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
         <span><router-link to="/Courses">Courses</router-link></span>
         <span><a href="request.html">Become a Tutor</a></span>
@@ -41,26 +41,22 @@ export default {
         <span style="flex-grow: 100000"></span>
         <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
         <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
-    </header>
+    </div>
     <main>
-        <div id="textcontent">
-            <h2><b>Sign In Now!</b></h2>
-            <p2><b>Peer-to-peer tutoring in 3 easy steps</b></p2>
-            <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Create an account </p3>
-            <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Find available tutors across IMSA </p3>
-            <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Sign-up and meet with your tutor </p3>
-        </div>
         <div id="sign-up-form">
             <form>
-                <label id="label">Email: <br><input type="email"  id = "Email" placeholder="  Type your email" class = "text-content" required></label>
+                <h3>Contact Us!</h3>
+                <label id="label">Name: <br><input type="textarea"  id = "Password" placeholder="  Create a password" class = "text-content" required></label>
                 <br>
-                <label id="label">Password: <br><input type="password"  id = "Password" placeholder="  Create a password" class = "text-content" required></label>
+                <label id="label">Email: 
                 <br>
+                <input type="email"  id = "Email" placeholder="  Type your email" class = "text-content" required></label>
+                <br>
+                <label id="label" for="describeYourProblem">Describe Your Problem: <br>
+                    <textarea name = "describeYourProblem" rows="4"></textarea>                                    
+                <br></label>
                 <b><input type="submit" value="Submit" id="Submit"></b>
             </form>
-            <p4 id="Signupplz"> Don't have an account?
-                <p4 id="bluetextlinking"><b><router-link to="/SignUp">Sign Up</router-link></b> </p4>
-            </p4>
         </div>
     </main>
     </div>
@@ -71,37 +67,36 @@ export default {
 </template>
 
 <style scoped>
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
   margin: 0%;
   overflow-x: hidden;
+  overflow-y: hidden;
   padding: 0%;
 }
 
+html, body {
+    height: 100%;
+}
+
 #indexheader {
-    margin-bottom: 0% !important ;
+    margin-bottom: 0% !important;
+    position: relative;
 }
 
 main {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
-    flex: 1;
-    gap: 3em !important;
+    align-items: flex-start;
     height: 100vh !important;
     width: 100% !important;
     background-image: url(../assets/Background_signin_svg.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: auto;
+    flex: 1;
 }
 
 #textcontent {
@@ -155,14 +150,14 @@ main {
     flex-direction: column;
     justify-content: column;
     align-items: center;
-    padding: 3%;
+    padding: 2%;
     height: fit-content;
     border-radius: 10px;
     border: solid 1px;
-    min-width: 35vw;
     max-width: 36vw;
     border: solid rgb(203, 213, 224) 2px;
     background-color: white;
+    margin-top: 20px;
 }
 
 #label {
@@ -242,11 +237,6 @@ main {
     border-color: rgb(92, 158, 235) !important;
 }
 
-#Password:hover {
-    border-color: rgb(92, 158, 235) !important;
-    transition: 0.3s;
-}
-
 #Username:hover{
     border-color: rgb(92, 158, 235) !important;
     transition: 0.3s;
@@ -257,19 +247,12 @@ main {
     transition: 0.3s;
 }
 
-#bluetextlink {
-    color: rgb(52, 129, 218);
-}
-
-#Signupplz {
-    flex-direction: column;
-    border: 0px;
-    border-radius: 5px;
-    color: black;
-    font-size: 15.25px;
-    text-align: center;
-    margin-top: 3vh;
-    line-height: 20px;
+textarea {
+    width: 100%;
+    padding: 2%;
+    border-radius: 8px;
+    border: solid rgb(203, 213, 224) 2px;
+    resize: none; 
 }
 
 #Submit:after{
@@ -280,4 +263,12 @@ main {
   background-color: rgb(74, 132, 220) !important;
     transition: 0.3s;
 }
+
+h3 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 22px;
+    color: black;
+}
+
 </style>

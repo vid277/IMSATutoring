@@ -54,7 +54,7 @@ export default {
       <span id = "houseNavBar"><a href="index.html" class="homeButton"><router-link to="/">Home</router-link></a></span>
       <span><router-link to="/Courses">Courses</router-link></span>
       <span><a href="request.html">Become a Tutor</a></span>
-      <span><a href="contact.html">Help</a></span>
+      <span><router-link to="/help">Help</router-link></span>
       <span style="flex-grow: 100000"></span>
       <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
       <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
@@ -75,7 +75,11 @@ export default {
                         <label id="label" for="textAreaBio">Bio: <br>
                             <textarea name = "textAreaBio" rows="4"></textarea>                                    
                         <br></label>
-                        <label id="label" for = "remindLink">Remind Meeting Link: <br><input type="url"  id = "Password" placeholder="{{remind link}}" class = "text-content" name = "remindLink"></label>
+                        <div class = "Bar2">
+                            <label id="label" for="hall">Hall: <br><input type="text"  id = "hall" placeholder="" class = "text-content" name = "hall"></label>
+                            <label id="label" for="wing">Wing: <br><input type="text"  id = "wing" placeholder="" class = "text-content" name = "wing"></label>
+                        </div>
+                        <label id="label" for = "remindLink">Calendly Meeting Link: <br><input type="url"  id = "Password" placeholder="{{remind link}}" class = "text-content" name = "remindLink"></label>
                         <br>
                         <b><input type="button" value="Update Information" id="updateButton"></b>
                     </form>
@@ -318,17 +322,6 @@ textarea:hover {
     color: rgb(52, 129, 218);
 }
 
-#Signupplz {
-    flex-direction: column;
-    border: 0px;
-    border-radius: 5px;
-    color: black;
-    font-size: 15.25px;
-    text-align: center;
-    margin-top: 3vh;
-    line-height: 20px;
-}
-
 #updateButton:hover{
   background-color: rgb(74, 132, 220) !important;
     transition: 0.3s;
@@ -389,4 +382,42 @@ textarea:hover {
 .file-input {
   display: none;
 }
+
+.Bar2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    gap: 1em;
+    flex: 1;
+}
+
+.Bar2 #label{
+    padding: 0px;
+}
+
+#hall {
+    border: solid 2px;
+    border-radius: 8px;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    padding: 2%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#wing {
+    border: solid 2px;
+    border-radius: 8px;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    padding: 2%;
+    width: 100%;
+}
+
+
+
 </style>
