@@ -154,7 +154,7 @@ main {
     height: fit-content;
     border-radius: 10px;
     border: solid 1px;
-    max-width: 36vw;
+    min-width: 36vw;
     border: solid rgb(203, 213, 224) 2px;
     background-color: white;
     margin-top: 20px;

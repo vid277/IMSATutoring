@@ -83,7 +83,9 @@ export default {
                     <div>                    
                       <h3 id = "label">Wing:</h3>
                       <p6 class = "hallNumber">{Wing Number}</p6>
-                    </div>                  </div>
+                    </div>                  
+                    </div>
+                    <button href="#" class = "studentBookingLink" id = "Submit">Click here to schedule a time</button>
                 </div>
                 <div class = "imageSelector">
                       <div
@@ -350,5 +352,24 @@ h3 {
 
 .tutorSubjectsDiv {
   margin-top: 2%;
+}
+
+#Submit {
+  border: 0px;
+  height: 7vh;
+  border-radius: 5px;
+  background-color: rgb(93, 170, 244) !important;
+  color: white;
+  font-size: large;
+  text-align: center;
+  margin-bottom: 0.5%;
+  vertical-align: center;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+#Submit:hover{
+  background-color: rgb(74, 132, 220) !important;
+    transition: 0.3s;
 }
 </style>

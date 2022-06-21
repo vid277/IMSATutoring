@@ -6,10 +6,7 @@
 3. npm run dev
 
 <b> To-Do (Front-End): </b>
-- Create a tutor description page (including workflow).
 - Design and create a home page.
-- Design and create a settings page along with user dashboard.
-- Create a student/tutor dashboard.
 - Create and add a footer to each page.
 
 <b> To-Do (Back-End): </b>
