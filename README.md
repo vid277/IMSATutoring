@@ -1,9 +1,8 @@
 <h3>This is a project to help build a peer tutoring website for IMSA (Illinois Math and Science Academy)</h3>
 
 <b>To-Run:</b>
-1. cd imsatutors
-2. npm i (Only needed when repo is first cloned/installed)
-3. npm run dev
+1. npm i (Only needed when repo is first cloned/installed)
+2. npm run dev
 
 <b> To-Do (Front-End): </b>
 - Design and create a home page.
