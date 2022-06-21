@@ -73,12 +73,6 @@ export default {
 </template>
 
 <style scoped>
-@font-face {
-    font-family: 'proxima_nova';
-    src: url('Font_Proximanova/proxima_nova_font-webfont.woff2') format('woff2'), url('Font_Proximanova/proxima_nova_font-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 * {
   font-family: 'Nunito', sans-serif;
@@ -96,6 +90,15 @@ main {
     gap: 3em !important;
     padding: 2em 0.5em !important;
     height: 100% !important;
+}
+
+@media only screen and (max-width: 900px)  {
+    main {
+        flex-direction: column;
+    }
+    #sign-up-form {
+        width: 50vw; 
+    }
 }
 
 #textcontent {
@@ -153,7 +156,6 @@ main {
     border-radius: 10px;
     border: solid 1px;
     min-width: 35vw;
-    max-width: 36vw;
     border: solid rgb(203, 213, 224) 2px;
     background-color: white;
 }

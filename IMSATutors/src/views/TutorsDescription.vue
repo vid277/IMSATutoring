@@ -7,6 +7,7 @@ export default {
     data(){
       return {
         isMobile: null,
+        imageData: null
       }
     },
     created (){
@@ -21,15 +22,32 @@ export default {
           return;
         }
         this.isMobile = false;
-      }
+    },
+    onSelectFile () {
+        const input = this.$refs.fileInput
+        const files = input.files
+        if (files && files[0]) {
+            const reader = new FileReader
+            reader.onload = e => {
+            this.imageData = e.target.result
+            }
+            reader.readAsDataURL(files[0])
+            this.$emit('input', files[0])
+        }
+    },
+    chooseImage () {
+        this.$refs.fileInput.click()
+    },
+    
     }
-  }
+}
 </script>
 
 <template>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-  <link href="\src\assets\commons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="\src\assets\commons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
 
 <div v-if="!isMobile">
     <header id="indexheader">
@@ -42,24 +60,47 @@ export default {
       <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
     </header>
     <body>
-      <main>
-        <div class = "textContent">
-          <div id = "nameBox">
-            <h1>[Tutor Name]</h1>
-          </div>
-          <div id = "tutorDescription">
-            <div id = "tutorImage">
-              <img src="\src\assets\access-denied.jpg">
+    <main>
+        <h2> {Person Name} </h2>
+        <div class = "mainTextArea">
+            <div class = "publicProfile">
+                <div id="sign-up-form">
+                <div class="aboutmeDiv">
+                    <h3 id = "label">About Me:</h3>
+                    <p1 class = "aboutMe">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusantium rem ad molestiae, itaque architecto! Doloremque possimus ex, odio assumenda ratione laborum maiores, facere perferendis voluptatum mollitia hic molestias libero.
+                    </p1>
+                  </div>
+                  <div class = "tutorSubjectsDiv">
+                    <h3 id = "label">Subjects I Tutor:</h3>
+                    <p6 class = "tutoringSubjects">{subjects}</p6> 
+                  </div>
+                  <div id = "twotable">
+                    <div>                    
+                      <h3 id = "label">Hall:</h3>
+                      <p6 class = "hallNumber">{Hall Number}</p6>
+                    </div>
+                    <div>                    
+                      <h3 id = "label">Wing:</h3>
+                      <p6 class = "hallNumber">{Wing Number}</p6>
+                    </div>                  </div>
+                </div>
+                <div class = "imageSelector">
+                      <div
+                          class="base-image-input"
+                        >
+                        <span
+                            v-if="!imageData"
+                            class="placeholder"
+                        >
+                        Image Here
+                        </span>
+                    </div>
+                </div>
             </div>
-            <div id = "textbooking">
-            <!--ToDo: Add a text area with details for booking a tutor-->
-            </div>
-          </div>
-          <br>
-          <br>
-          <br>
-        </div>
-      </main>
+        </div> 
+        <br>
+    </main>
     </body>
 </div>
 <div v-else class = "mobileMessage">
@@ -68,18 +109,19 @@ export default {
 </div>
 </template>
 
-<style scoped>
+<style>
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
   margin: 0%;
   overflow-x: hidden;
-  overflow-y: hidden;
   padding: 0%;
+  overflow-y: hidden;
 }
 
 #indexheader {
   position: relative !important;
+  text-align: center;
 }
 
 main {
@@ -87,35 +129,226 @@ main {
   padding: 0% !important;
   width: 100%;
   height: 100%;
+  gap: 0rem !important;
+  overflow-y: auto;
 }
 
-.textContent {
-  padding: 1%;
-  width: 100%;
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.textContent #nameBox{
-  width: 100%;
-  text-align: center;
-  background-color: rgb(203, 213, 224);
-  padding: 1%;
-  border-radius: 10px;
+::-webkit-scrollbar-thumb {
+  background: rgb(203, 213, 224);
 }
 
-.textContent #nameBox h1{
-  font-weight: 700 !important;
+.mainTextArea {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin: 0% !important;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/whiteBackground.png);
+    background-size: 500px;
+    background-repeat: repeat;
+    background-color: white;
 }
 
-.textContent #tutorDescription {
+main h2 {
+    font-weight: 700;
+    text-align: start;
+    margin: 2%;
+    font-size: 25px;
+    border-bottom: solid 2px black;
+    margin-bottom: 0%;
+}
+
+.publicProfile {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    overflow-y: auto !important;
+    margin-top: 2%;
+}
+
+@media only screen and (max-width: 900px)  {
+  .publicProfile {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      margin-left: 2%;
+      margin-right: 2%;
+      overflow-y: auto !important;
+      margin-top: 2%;
+  }
+}
+
+.textSelector {
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+form {
+    width: 65%;
+}
+
+#sign-up-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    padding: 3%;
+    height: fit-content;
+    border-radius: 10px;
+    border: solid 1px;
+    width: 75%;
+    border: solid rgb(203, 213, 224) 2px;
+    background-color: white;
+    row-gap: 0.5em;
+}
+
+#label {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    align-items: baseline;
+    text-align: left;
+    font-size: 16px;
+    gap: 0.55rem;
+    font-weight: 700;
+    color: black;
+    width: 100%;
+    transition: 0.3s;
+}
+
+textarea:hover {
+    border-color: rgb(92, 158, 235) !important;
+    transition: 0.3s;
+}
+
+
+#bluetextlink {
+    color: rgb(52, 129, 218);
+}
+
+#updateButton:hover{
+  background-color: rgb(74, 132, 220) !important;
+    transition: 0.3s;
+}
+
+.imageSelector {
+    height: 100%;
+    width: 50%;
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center !important;
+}
+
+.imageSelector #label{
+    text-align: center !important;
+    align-items: center;
+    padding: 2%;
+    background-color: white;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+.base-image-input {
   display: flex;
-  row-gap: 1em;
-  gap: 1em;
-  height: calc(100vh);
-  width: 100%;
-  overflow-y: auto !important;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  margin-top: 5%;
+  background-color: white;
+  border:solid 1.75px rgb(203, 213, 224);
 }
 
-.textContent #tutorDescription #tutorImage{
-  margin-top: 1%;
+.base-image-input:hover {
+    border-color: rgb(52, 129, 218);
+}
+
+.placeholder {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 50%;
+  border: solid 1.75px  rgb(203, 213, 224);
+}
+
+.placeholder:hover {
+  background: #E0E0E0;
+}
+
+.file-input {
+  display: none;
+}
+
+.Bar2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    gap: 1em;
+    flex: 1;
+}
+
+.Bar2 #label{
+    padding: 0px;
+}
+
+#hall {
+    border: solid 2px;
+    border-radius: 8px;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    padding: 2%;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#wing {
+    border: solid 2px;
+    border-radius: 8px;
+    line-height: 20px;
+    border: solid rgb(203, 213, 224) 2px;
+    height: 45px;
+    font-size: 15px;
+    padding: 2%;
+    width: 100%;
+}
+
+h3 {
+  text-align: left;
+}
+
+#twotable {
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+  margin-top: 2%;
+}
+
+.tutorSubjectsDiv {
+  margin-top: 2%;
 }
 </style>
