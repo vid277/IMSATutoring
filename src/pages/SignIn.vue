@@ -30,7 +30,7 @@ export default {
     <main>
         <div id="textcontent">
             <h2><b>Sign In Now!</b></h2>
-            <p2><b>Peer-to-peer tutoring in 3 easy steps</b></p2>
+            <p2>Peer-to-peer tutoring in 3 easy steps</p2>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Create an account </p3>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Find available tutors across IMSA </p3>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Sign-up and meet with your tutor </p3>
@@ -44,7 +44,7 @@ export default {
                 <b><input type="submit" value="Submit" id="Submit"></b>
             </form>
             <p4 id="Signupplz"> Don't have an account?
-                <p4 id="bluetextlinking"><b><router-link to="/SignUp">Sign Up</router-link></b> </p4>
+                <p4 id="bluetextlinking"><router-link to="/SignUp">Sign Up</router-link> </p4>
             </p4>
         </div>
     </main>
@@ -101,7 +101,7 @@ main {
     color: rgb(112, 108, 108);
     font-size: 20px;
     margin: 0.6px;
-    font-family: 'proxima_novaregular';
+    font-family: 'Nunito';
 }
 
 .fa fa-check-circle {

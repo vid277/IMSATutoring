@@ -31,7 +31,7 @@ export default {
     <main>
         <div id="textcontent">
             <h2><b>Sign Up for Free</b></h2>
-            <p2><b>Peer-to-peer tutoring</b></p2>
+            <p2>Peer-to-peer tutoring</p2>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Virtual peer tutoring 1-on-1 or in small-groups</p3>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> 100% free–for students, parents, and teachers</p3>
             <p3><i class="fa fa-check-circle" style="font-size:24px;color: rgb(93,170,244);"></i> Used across the IMSA community</p3>
@@ -47,7 +47,7 @@ export default {
                 <b><input type="submit" value="Submit" id="Submit"></b>
             </form>
             <p4 id="Signupplz"> Already have an account?
-                <p4 id="bluetextlinking"><b><router-link to="/SignIn">Sign In</router-link></b> </p4>
+                <p4 id="bluetextlinking"><router-link to="/SignIn">Sign In</router-link></p4>
             </p4>
         </div>
     </main>
@@ -110,7 +110,7 @@ main {
     color: rgb(112, 108, 108);
     font-size: 20px;
     margin: 0.6px;
-    font-family: 'proxima_novaregular';
+    font-family: 'Nunito';
 }
 
 .fa fa-check-circle {
@@ -118,7 +118,6 @@ main {
     width: auto;
     z-index: 10000;
     color: rgb(92, 158, 235) !important;
-    font-family: 'proxima_novaregular';
     flex-direction: row;
     justify-content: center;
     align-items: center;

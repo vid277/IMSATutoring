@@ -93,11 +93,6 @@ export default {
         </div> 
         <br>
     </main>
-</div>
-<div v-else class = "mobileMessage">
-  <h2> Sorry, this app is not supported on Mobile Devices </h2>
-  <p> To use this app, please switch to a computer or tablet </p>
-</div>
 </template>
 
 <style scoped>
