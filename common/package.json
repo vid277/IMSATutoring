@@ -1,0 +1,11 @@
+{
+    "name": "imsatutors-common",
+    "version": "1.0.0",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "IMSATutoring"
+    },
+    "author": "Vidyoot Senthil",
+    "license": "ISC"
+}
