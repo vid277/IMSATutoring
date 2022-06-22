@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'IMSA Tutoring',
+      name: 'IMSA_Tutoring',
       component: MainView,
       children: [
         {
