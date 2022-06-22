@@ -12,6 +12,6 @@ export default defineConfig({
     },
   },
   preview: {
-    port: process.env.PORT ?? 8080
+    port: parseInt(process.env.PORT ?? "8080")
   }
 })
