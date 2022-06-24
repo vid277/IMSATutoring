@@ -68,7 +68,15 @@ export default {
             this.wellnessVisible = true;
             this.csVisible = true;
           }
-        }
+        },
+        redirectPage(event) {
+          fetch("/api/ping")
+          .then(response => response.text())
+          .then(text => {
+            console.log("This should be pong:");
+            console.log(text)
+          })        
+          }
       }
     } 
 </script>
@@ -115,7 +123,7 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Mathematical Investigations</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card" id = "Mathematical Investigations 1/2" @click="redirectPage($event)">
+                    <div class="card" @click="redirectPage('Mathematical Investigations 1/2')">
                       <h3>MI - I/II</h3>
                     </div>
                     <div class="card">
