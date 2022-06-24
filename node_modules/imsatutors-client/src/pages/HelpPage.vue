@@ -3,28 +3,6 @@
 </script>
 
 <script>
-export default {
-    data(){
-      return {
-        isMobile: null,
-      }
-    },
-    created (){
-      this.checkScreenSize();
-      window.addEventListener("resize", this.checkScreenSize);
-    },
-    methods: {
-      checkScreenSize(){
-        const constWidth = window.innerWidth;
-        if (constWidth <= 750){
-          this.isMobile = true;
-          return;
-        }
-  
-        this.isMobile = false;
-      }
-    }
-  }
 </script>
 
 <template>
@@ -61,10 +39,6 @@ export default {
   padding: 0%;
 }
 
-html, body {
-    height: 100%;
-}
-
 #indexheader {
     margin-bottom: 0% !important;
     position: relative;
@@ -80,7 +54,7 @@ main {
     background-image: url(../assets/Background_signin_svg.svg);
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-y: auto;
+    overflow-y: hidden !important;
     flex: 1;
 }
 

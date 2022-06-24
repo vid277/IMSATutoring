@@ -381,6 +381,8 @@ main {
 
 #wrapper .filterMenu div label {
   margin: 0.6rem;
+  font-size: 15.5px !important;
+  font-weight: normal !important;
 }
 
 .search input[type=text]{
