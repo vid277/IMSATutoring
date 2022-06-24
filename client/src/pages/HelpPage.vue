@@ -41,7 +41,7 @@
 
 #indexheader {
     margin-bottom: 0% !important;
-    position: relative;
+    position: absolute;
 }
 
 main {
@@ -49,13 +49,13 @@ main {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh !important;
+    height: 90vh !important;
     width: 100% !important;
     background-image: url(../assets/Background_signin_svg.svg);
-    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    overflow-y: hidden !important;
-    flex: 1;
 }
 
 #textcontent {

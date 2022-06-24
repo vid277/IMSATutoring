@@ -41,10 +41,12 @@ main {
     align-items: center;
     flex: 1;
     gap: 3em !important;
-    height: 100vh !important;
+    height: 90vh !important;
     width: 100% !important;
     background-image: url(../assets/Background_signin_svg.svg);
-    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
 }
 

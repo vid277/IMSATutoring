@@ -115,7 +115,7 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Mathematical Investigations</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card">
+                    <div class="card" id = "Mathematical Investigations 1/2" @click="redirectPage($event)">
                       <h3>MI - I/II</h3>
                     </div>
                     <div class="card">
