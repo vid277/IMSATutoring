@@ -8,6 +8,11 @@ export default {
     data(){
       return {
         isMobile: null,
+        mathVisible: true,
+        scienceVisible: true,
+        csVisible: true,
+        wellnessVisible: true,
+        selectedCategories: [],
       }
     },
     created (){
@@ -23,8 +28,49 @@ export default {
         }
         this.isMobile = false;
       },
-      },
-    }
+      showCertainElements(event){
+        if (event.target.checked){
+          this.selectedCategories.push(event.target.id)
+        }        
+        else {
+          const id = event.target.id;
+          for (let data of this.selectedCategories){
+            if (data === id){
+              const index = this.selectedCategories.indexOf(data);
+              this.selectedCategories.splice(index, 1)
+            }
+          }
+        }
+        if (this.selectedCategories.length >= 1){
+            this.mathVisible = false;
+            this.scienceVisible = false;
+            this.wellnessVisible = false;
+            this.csVisible = false;
+
+            for (let category of this.selectedCategories) {
+              if (category == "Math"){
+                this.mathVisible = true;
+              }
+              else if (category == "Science") {
+                this.scienceVisible = true;
+              }
+              else if (category == "ComputerScience"){
+                this.csVisible = true;
+              }
+              else if (category == "Wellness"){
+                this.wellnessVisible = true;
+              }
+            }
+          }
+          else {
+            this.mathVisible = true;
+            this.scienceVisible = true;
+            this.wellnessVisible = true;
+            this.csVisible = true;
+          }
+        }
+      }
+    } 
 </script>
 
 <template>
@@ -33,32 +79,22 @@ export default {
         <div class = "filterMenu">
           <fieldset>
             <h3><span>🗃️</span>Filter Menu</h3>
-            <h4>Search by Course:</h4>
-            <div class="search">
-              <form>
-                  <input type="text"
-                      placeholder="Type to start searching..."
-                      name="search"
-                      maxlength="20"     
-                  >
-              </form>
-            </div>
             <h4>Filter by Subject: </h4>
             <div>
                 <div>
-                    <input type="checkbox" id="Math" name="Math">
+                    <input type="checkbox" id="Math" name="Math" @click="showCertainElements($event)">
                     <label for="Math">Math</label>
                 </div> 
                 <div>
-                    <input type="checkbox" id="Science" name="Science">
+                    <input type="checkbox" id="Science" name="Science" @click="showCertainElements($event)">
                     <label for="Science">Science</label>
                 </div> 
                 <div>
-                    <input type="checkbox" id="ComputerScience" name="ComputerScience">
+                    <input type="checkbox" id="ComputerScience" name="ComputerScience" @click="showCertainElements($event)"> 
                     <label for="ComputerScience">Computer Science</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="Wellness" name="Wellness">
+                    <input type="checkbox" id="Wellness" name="Wellness" @click="showCertainElements($event)">
                     <label for="Wellness">Wellness</label>
                 </div> 
             </div>
@@ -72,7 +108,7 @@ export default {
           <div class = "TextPlaceWrapper">
             <h2>Courses Offered: </h2>
           </div>
-          <div class = "textDiv">
+          <div class = "textDiv" v-if="mathVisible">
             <h2>Math: </h2>
             <div class = "cardList mathCards">
               <div class="large-card">
@@ -131,7 +167,7 @@ export default {
               </div>
             </div>
           </div>
-          <div style="margin-top: 2%" class = "textDiv">
+          <div style="margin-top: 2%" class = "textDiv" v-if="scienceVisible">
             <h2>Science: </h2>
             <div class = "cardList scienceCards">
               <div class="scienceCard large-card">
@@ -208,7 +244,7 @@ export default {
               </div>
             </div>
           </div>
-          <div style="margin-top: 2%" class = "textDiv">
+          <div style="margin-top: 2%" class = "textDiv" v-if="csVisible">
             <h2>Computer Science: </h2>
             <div class = "cardList">
               <div class="computerCards large-card">
@@ -247,7 +283,7 @@ export default {
               </div>
             </div>
           </div>
-          <div style="margin-top: 2%" class = "textDiv">
+          <div style="margin-top: 2%" class = "textDiv" v-if="wellnessVisible">
             <h2>Wellness: </h2>
             <div class = "cardList">
               <div class="wellnessCard large-card">
@@ -429,6 +465,7 @@ main {
 
 .textDiv {
   margin: 1%;
+  transition: 0.3s;
 }
 
 .textDiv h2{
