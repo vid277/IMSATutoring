@@ -14,6 +14,7 @@ module.exports.start = function() {
     }
 
     //Mount app
+    const client_dir = path.resolve(__dirname + "../../../client")
     if (process.argv.indexOf("--dev-server") > -1) {
         //If running in dev mode, forward all requests to a newly spawned Vite dev server
 
@@ -37,7 +38,6 @@ module.exports.start = function() {
             })
         })
 
-        const client_dir = path.resolve(__dirname + "../../../client")
         console.log(client_dir)
         const subprocess = child_process.spawn("npm", ["run-script", "dev"], {
             shell: true,
@@ -47,9 +47,15 @@ module.exports.start = function() {
         subprocess.on("close", (code) => { process.exit(code) });
         process.on("close", () => { subprocess.close(); });
     } else {
-        //Serve files from the Vite build directory
+        //If there is not file extension, assume it wants to load the app, and serve /
+        server.use((req, res, next) => {
+            const has_extension = req.path.indexOf(".") > req.path.indexOf("/")
+            if (!has_extension) req.url = "/";
+            next()
+        })
 
-        const root = path.resolve(__dirname + "../../../client/dist")
+        //Serve files from the Vite build directory
+        const root = path.resolve(client_dir + "/dist")
         server.use(express.static(root))
     }
 

@@ -70,7 +70,7 @@ export default {
           }
         },
         redirectPage(event) {
-          fetch("/api/ping")
+          fetch("/tutors")
           .then(response => response.text())
           .then(text => {
             console.log("This should be pong:");
