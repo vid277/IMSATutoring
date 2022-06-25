@@ -7,6 +7,4 @@ const app = createApp(TopLevelComponent)
 app.use(router)
 
 window.app = app
-console.log("about to mount")
 app.mount('#app')
-console.log("Mounting")

@@ -1,5 +1,6 @@
 <script setup>
     import { RouterLink, RouterView } from 'vue-router'
+    import { store } from '../store.js'
 </script>
 
 <script>
@@ -69,14 +70,10 @@ export default {
             this.csVisible = true;
           }
         },
-        /*redirectPage(event) {
-          fetch("/tutors")
-          .then(response => response.text())
-          .then(text => {
-            console.log("This should be pong:");
-            console.log(text)
-          })        
-        }*/
+        redirectPage (event, formattedName) {
+          store.courseName = formattedName;
+          this.$router.push(`/tutors/${event}`) 
+        }
       }
     } 
 </script>
@@ -123,16 +120,16 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Mathematical Investigations</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card" @click="redirectPage('Mathematical Investigations 1/2')">
+                    <div class="card" @click="redirectPage('MI1', 'Mathematical Investigations I/II')">
                       <h3>MI - I/II</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('MI2', 'Mathematical Investigations II')">
                       <h3>MI - II</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('MI3', 'Mathematical Investigations III')">
                       <h3>MI - III</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('MI4', 'Mathematical Investigations IV')">
                       <h3>MI - IV</h3>
                     </div>
                   </div>
@@ -142,16 +139,16 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Calculus</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card">
+                    <div class="card" @click="redirectPage('calculus1', 'Calculus 1')"> 
                       <h3>Calculus 1</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('calculus2', 'Calculus 2')">
                       <h3>Calculus 2</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('calculus3', 'Calculus 3')">
                       <h3>Calculus 3</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('mvc', 'Multivariable Calculus')">
                       <h3>Multivariable Calculus</h3>
                     </div>
                   </div>
@@ -161,13 +158,13 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Other Courses</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card">
+                    <div class="card" @click="redirectPage('numbertheory', 'Number Theory')">
                       <h3>Number Theory</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('theoryofanalysis', 'Theory of Analysis')">
                       <h3>Theory of Analysis</h3>
                     </div>
-                    <div class="card">
+                    <div class="card" @click="redirectPage('linearalgebra', 'Linear Algebra')">
                       <h3>Linear Algebra</h3>
                     </div>
                   </div>

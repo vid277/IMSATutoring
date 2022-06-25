@@ -1,8 +1,29 @@
 <script setup>
-    import { RouterLink, RouterView } from 'vue-router'
+import exp from 'constants';
+import { RouterLink, RouterView } from 'vue-router'
+import { store } from '../store';
 </script>
 
 <script>
+export default {
+  data () {
+    return {
+      courseName: store.courseName,
+    }
+  },
+  methods : {
+  },
+  created() {
+    console.log(this.courseName);
+    fetch("/api/tutors/:course")
+      .then(response => response.text())
+      .then(text => {
+        console.log(`This should be ${this.courseName}:`);
+        console.log(text)
+    }) 
+  }
+  
+}
 </script>
 
 <template>
@@ -104,7 +125,7 @@
   <div class = "mainTextPlace">
   <div class = "innerBox">
       <div class = "TextPlaceWrapper">
-          <h1>[Class Name]</h1>
+          <h1>{{courseName}}</h1>
       </div>
       <div class = "tutorCards">
         <div class="card">

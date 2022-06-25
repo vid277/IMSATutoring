@@ -28,7 +28,7 @@ const router = createRouter({
           component: () => import('../pages/PageNotFound.vue')
         },
         {
-          path: '/tutors',
+          path: '/tutors/:course',
           name: 'tutorList',
           component: () => import('../pages/TutorsList.vue')
         },
