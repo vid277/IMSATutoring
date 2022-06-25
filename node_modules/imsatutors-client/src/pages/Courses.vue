@@ -69,14 +69,14 @@ export default {
             this.csVisible = true;
           }
         },
-        redirectPage(event) {
+        /*redirectPage(event) {
           fetch("/tutors")
           .then(response => response.text())
           .then(text => {
             console.log("This should be pong:");
             console.log(text)
           })        
-          }
+        }*/
       }
     } 
 </script>

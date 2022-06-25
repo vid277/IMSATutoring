@@ -19,18 +19,26 @@ module.exports.start = function() {
         //If running in dev mode, forward all requests to a newly spawned Vite dev server
 
         server.use((req, res) => {
+            /*console.log(req.headers)
+            delete req.headers.host
+            delete req.headers.referer*/
             const forward = http.request({
-                host: "localhost",
+                host: "127.0.0.1",
                 port: "8081",
                 path: req.path,
                 method: req.method,
                 headers: req.headers
             }, (res2) => {
                 res.statusCode = res2.statusCode
-                res.headers = res2.headers
+                console.log("------")
+                console.log(res2.headers)
+                for (header in res2.headers) {
+                    //console.log(header)
+                    res.setHeader(header, res2.headers[header])
+                }
                 res2.pipe(res)
             });
-            req.pipe(forwrad);
+            req.pipe(forward);
             forward.on("error", (err) => {
                 console.warn(err);
                 res.statusCode = 500;
@@ -45,7 +53,7 @@ module.exports.start = function() {
             cwd: client_dir
         })
         subprocess.on("close", (code) => { process.exit(code) });
-        process.on("close", () => { subprocess.close(); });
+        process.on("close", () => { subprocess.kill(); });
     } else {
         //If there is not file extension, assume it wants to load the app, and serve /
         server.use((req, res, next) => {
