@@ -1,6 +1,4 @@
 <template>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Nunito:wght@400;500&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link href="\src\assets\commons.css" rel="stylesheet">
   
 <div class="about">
   <img src="\src\assets\access-denied.jpg">

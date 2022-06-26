@@ -26,6 +26,10 @@ export default {
       .then(response => (response.json()))
       .then((stringify) => {this.tutorDetails = stringify;})
       .then(() => {
+        var tempChem = [];
+        var tempPhysics = [];
+        var tempBio = [];
+
         if(this.tutorDetails.math_courses != null){
           for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
             this.mathCourses.push(this.tutorDetails.math_courses[i])
@@ -41,18 +45,28 @@ export default {
             this.otherCourses.push(this.tutorDetails.other_courses[i])
           }
         }
+        if(this.tutorDetails.chem_courses != null){
+          for (var i = 0; i < this.tutorDetails.chem_courses.length; i++){
+            tempChem.push(this.tutorDetails.chem_courses[i])
+          }
+        }
+        if(this.tutorDetails.physics_courses != null){
+          for (var i = 0; i < this.tutorDetails.physics_courses.length; i++){
+            tempPhysics.push(this.tutorDetails.physics_courses[i])
+          }
+        }
+        if(this.tutorDetails.bio_courses != null){
+          for (var i = 0; i < this.tutorDetails.bio_courses.length; i++){
+            tempBio.push(this.tutorDetails.bio_courses[i])
+          }
+        }
+        console.log(this.mathCourses)
       })
     },
 }
 </script>
 
 <template>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
-<link href="\src\assets\commons.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
-
-<body>
 <main>
     <h2> {{tutorDetails.first_name + " " + tutorDetails.last_name}} </h2>
     <div class = "mainTextArea">
@@ -98,7 +112,6 @@ export default {
     </div> 
     <br>
 </main>
-</body>
 </template>
 
 <style scoped>
