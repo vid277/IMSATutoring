@@ -1,6 +1,5 @@
 <script setup>
     import { RouterLink, RouterView } from 'vue-router'
-    import { store } from '../store.js'
 </script>
 
 <script>
@@ -71,8 +70,12 @@ export default {
           }
         },
         redirectPage (event, formattedName) {
-          store.courseName = formattedName;
-          this.$router.push(`/tutors/${event}`) 
+          this.$router.push({
+            name: "tutorList",
+            params: {
+              course: formattedName
+            }
+          })
         }
       }
     } 

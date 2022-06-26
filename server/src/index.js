@@ -10,7 +10,10 @@ api.post("/ping", (req, res) => {
     req.pipe(res);
 });
 
-api.get("/tutors/:course", (req, res) => res.end(req.params.course))
+api.get("/tutors/:course", (req, res) => {
+    //Get parameter by req.params.<name here>
+    res.end(JSON.stringify(getTutorbyCourse(req.params.course)))
+});
 
 
 

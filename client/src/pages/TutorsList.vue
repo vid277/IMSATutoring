@@ -8,14 +8,20 @@ import { store } from '../store';
 export default {
   data () {
     return {
-      courseName: store.courseName,
     }
   },
   methods : {
   },
+  computed: {
+    courseName() { 
+      return this.$route.params.course 
+    }
+  },
   created() {
     console.log(this.courseName);
-    fetch("/api/tutors/:course")
+    //encodeURIComponent(this.courseName) - converts to URL-ready foramt
+    //decodeURIComponent(whatever) - converts to normal string
+    fetch(`/api/tutors/${encodeURIComponent(this.courseName)}`)
       .then(response => response.text())
       .then(text => {
         console.log(`This should be ${this.courseName}:`);

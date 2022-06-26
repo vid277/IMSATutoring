@@ -40,3 +40,15 @@ npm run dev
 npm run build
 ```
 
+
+
+
+{
+    "tutors": {},
+    "courses": {
+        "mi2": {
+            "display_name": "Mathematical Ivento @",
+            "teachers": [],
+        }
+    }
+}
