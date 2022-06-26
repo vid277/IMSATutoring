@@ -28,6 +28,11 @@ const router = createRouter({
           component: () => import('../pages/PageNotFound.vue')
         },
         {
+          path: '/',
+          name: 'main',
+          component: () => import('../pages/Homepage.vue')
+        },
+        {
           path: '/tutors/:course',
           name: 'tutorList',
           component: () => import('../pages/TutorsList.vue')
@@ -51,11 +56,6 @@ const router = createRouter({
           path: '/help',
           name: 'help',
           component: () => import('../pages/HelpPage.vue')
-        },
-        {
-          path: '/',
-          name: 'Homepage',
-          component: () => import('.../pages/Homepage.vue')
         },
       ]
     }
