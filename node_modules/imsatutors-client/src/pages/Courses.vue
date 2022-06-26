@@ -73,7 +73,7 @@ export default {
           this.$router.push({
             name: "tutorList",
             params: {
-              course: formattedName
+              course: formattedName,
             }
           })
         }
@@ -123,16 +123,16 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Mathematical Investigations</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card" @click="redirectPage('MI1', 'Mathematical Investigations I/II')">
+                    <div class="card" @click="redirectPage('MI1', 'Mathematical Investigations 1/2')">
                       <h3>MI - I/II</h3>
                     </div>
-                    <div class="card" @click="redirectPage('MI2', 'Mathematical Investigations II')">
+                    <div class="card" @click="redirectPage('MI2', 'Mathematical Investigations 2')">
                       <h3>MI - II</h3>
                     </div>
-                    <div class="card" @click="redirectPage('MI3', 'Mathematical Investigations III')">
+                    <div class="card" @click="redirectPage('MI3', 'Mathematical Investigations 3')">
                       <h3>MI - III</h3>
                     </div>
-                    <div class="card" @click="redirectPage('MI4', 'Mathematical Investigations IV')">
+                    <div class="card" @click="redirectPage('MI4', 'Mathematical Investigations 4')">
                       <h3>MI - IV</h3>
                     </div>
                   </div>
@@ -142,13 +142,13 @@ export default {
                 <div class = "inner-card">
                   <h5 class="card-title">Calculus</h5>
                   <div class = "courses MI-Sequence">
-                    <div class="card" @click="redirectPage('calculus1', 'Calculus 1')"> 
+                    <div class="card" @click="redirectPage('calculus1', 'BC Calculus 1')"> 
                       <h3>Calculus 1</h3>
                     </div>
-                    <div class="card" @click="redirectPage('calculus2', 'Calculus 2')">
+                    <div class="card" @click="redirectPage('calculus2', 'BC Calculus 2')">
                       <h3>Calculus 2</h3>
                     </div>
-                    <div class="card" @click="redirectPage('calculus3', 'Calculus 3')">
+                    <div class="card" @click="redirectPage('calculus3', 'BC Calculus 3')">
                       <h3>Calculus 3</h3>
                     </div>
                     <div class="card" @click="redirectPage('mvc', 'Multivariable Calculus')">

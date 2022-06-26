@@ -1,5 +1,6 @@
 const express = require("express")
 const server = require("./server")
+const userData = require('../data/tutors.json');
 
 const api = express()
 server.api = api
@@ -12,7 +13,7 @@ api.post("/ping", (req, res) => {
 
 api.get("/tutors/:course", (req, res) => {
     //Get parameter by req.params.<name here>
-    res.end(JSON.stringify(getTutorbyCourse(req.params.course)))
+    res.send(JSON.stringify(getTutorbyCourse(req.params.course)))
 });
 
 
@@ -93,7 +94,6 @@ function getTutorbyCourse (course) {
         console.log("No Tutors Found");
     }
 
-    readline.close();
     return tutorForCourse;
 }
 //https://tutors.imsa.edu/api/ping

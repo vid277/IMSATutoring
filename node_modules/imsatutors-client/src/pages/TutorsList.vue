@@ -1,5 +1,6 @@
 <script setup>
 import exp from 'constants';
+import { json } from 'stream/consumers';
 import { RouterLink, RouterView } from 'vue-router'
 import { store } from '../store';
 </script>
@@ -8,7 +9,8 @@ import { store } from '../store';
 export default {
   data () {
     return {
-    }
+      tutorInformationList:[],
+    };
   },
   methods : {
   },
@@ -22,11 +24,16 @@ export default {
     //encodeURIComponent(this.courseName) - converts to URL-ready foramt
     //decodeURIComponent(whatever) - converts to normal string
     fetch(`/api/tutors/${encodeURIComponent(this.courseName)}`)
-      .then(response => response.text())
-      .then(text => {
-        console.log(`This should be ${this.courseName}:`);
-        console.log(text)
-    }) 
+      .then(response => (response.json()))
+      .then((stringify) => {this.tutorInformationList = stringify; console.log(this.tutorInformationList)})
+      .then(() => {
+        console.log("List I made: ")
+        //this works
+        console.log(this.tutorInformationList[0].first_name)
+        console.log(this.tutorInformationList)
+        return;
+        }
+      )
   }
   
 }
