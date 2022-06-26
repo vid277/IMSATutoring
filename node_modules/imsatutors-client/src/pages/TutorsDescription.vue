@@ -31,14 +31,9 @@ export default {
             this.mathCourses.push(this.tutorDetails.math_courses[i])
           }
         }
-        if(this.tutorDetails.science_courses != null){
-          for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
-            this.mathCourses.push(this.tutorDetails.math_courses[i])
-          }
-        }
         if(this.tutorDetails.cs_courses != null){
-          for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
-            this.mathCourses.push(this.tutorDetails.math_courses[i])
+          for (var i = 0; i < this.tutorDetails.cs_courses.length; i++){
+            this.csCourses.push(this.tutorDetails.cs_courses[i])
           }
         }
         if(this.tutorDetails.other_courses != null){
@@ -71,7 +66,7 @@ export default {
               </div>
               <div class = "tutorSubjectsDiv">
                 <h3 id = "label">Subjects I Tutor:</h3>
-                <div class = "courses" v-for = ""></div>
+                <div class = "courses"></div>
                 <ul></ul>
                 <p6 class = "tutoringSubjects">{subjects}</p6> 
               </div>
