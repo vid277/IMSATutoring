@@ -2,7 +2,7 @@
     "name": "imsatutors",
     "version": "0.0.0",
     "scripts": {
-        "start": "cd server && npm start",
+        "start": "cd client && npm run-script build && cd ../server && npm start",
         "dev": "cd server && npm run-script dev"
     },
     "dependencies": {

@@ -6,4 +6,5 @@ const app = createApp(TopLevelComponent)
 
 app.use(router)
 
+window.app = app
 app.mount('#app')

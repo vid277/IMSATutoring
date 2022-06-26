@@ -1,8 +1,42 @@
 <script setup>
-    import { RouterLink, RouterView } from 'vue-router'
+import exp from 'constants';
+import { json } from 'stream/consumers';
+import { RouterLink, RouterView } from 'vue-router'
+import { store } from '../store';
 </script>
 
 <script>
+export default {
+  data () {
+    return {
+      tutorInformationList:[],
+    };
+  },
+  methods : {
+  },
+  computed: {
+    courseName() { 
+      return this.$route.params.course 
+    }
+  },
+  created() {
+    console.log(this.courseName);
+    //encodeURIComponent(this.courseName) - converts to URL-ready foramt
+    //decodeURIComponent(whatever) - converts to normal string
+    fetch(`/api/tutors/${encodeURIComponent(this.courseName)}`)
+      .then(response => (response.json()))
+      .then((stringify) => {this.tutorInformationList = stringify; console.log(this.tutorInformationList)})
+      .then(() => {
+        console.log("List I made: ")
+        //this works
+        console.log(this.tutorInformationList[0].first_name)
+        console.log(this.tutorInformationList)
+        return;
+        }
+      )
+  }
+  
+}
 </script>
 
 <template>
@@ -104,7 +138,7 @@
   <div class = "mainTextPlace">
   <div class = "innerBox">
       <div class = "TextPlaceWrapper">
-          <h1>[Class Name]</h1>
+          <h1>{{courseName}}</h1>
       </div>
       <div class = "tutorCards">
         <div class="card">

@@ -14,22 +14,31 @@ module.exports.start = function() {
     }
 
     //Mount app
+    const client_dir = path.resolve(__dirname + "../../../client")
     if (process.argv.indexOf("--dev-server") > -1) {
         //If running in dev mode, forward all requests to a newly spawned Vite dev server
 
         server.use((req, res) => {
+            /*console.log(req.headers)
+            delete req.headers.host
+            delete req.headers.referer*/
             const forward = http.request({
-                host: "localhost",
+                host: "127.0.0.1",
                 port: "8081",
                 path: req.path,
                 method: req.method,
                 headers: req.headers
             }, (res2) => {
                 res.statusCode = res2.statusCode
-                res.headers = res2.headers
+                console.log("------")
+                console.log(res2.headers)
+                for (header in res2.headers) {
+                    //console.log(header)
+                    res.setHeader(header, res2.headers[header])
+                }
                 res2.pipe(res)
             });
-            req.pipe(forwrad);
+            req.pipe(forward);
             forward.on("error", (err) => {
                 console.warn(err);
                 res.statusCode = 500;
@@ -37,7 +46,6 @@ module.exports.start = function() {
             })
         })
 
-        const client_dir = path.resolve(__dirname + "../../../client")
         console.log(client_dir)
         const subprocess = child_process.spawn("npm", ["run-script", "dev"], {
             shell: true,
@@ -45,11 +53,17 @@ module.exports.start = function() {
             cwd: client_dir
         })
         subprocess.on("close", (code) => { process.exit(code) });
-        process.on("close", () => { subprocess.close(); });
+        process.on("close", () => { subprocess.kill(); });
     } else {
-        //Serve files from the Vite build directory
+        //If there is not file extension, assume it wants to load the app, and serve /
+        server.use((req, res, next) => {
+            const has_extension = req.path.indexOf(".") > req.path.indexOf("/")
+            if (!has_extension) req.url = "/";
+            next()
+        })
 
-        const root = path.resolve(__dirname + "../../../client/dist")
+        //Serve files from the Vite build directory
+        const root = path.resolve(client_dir + "/dist")
         server.use(express.static(root))
     }
 

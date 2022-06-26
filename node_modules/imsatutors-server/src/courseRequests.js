@@ -2,7 +2,7 @@ const express = require('express');
 const { read } = require('fs');
 const { join } = require('path');
 const path = require('path');
-const userData = require('./data/tutors.json');
+const userData = require('../data/tutors.json');
 
 const readline = require('readline').createInterface({
     input: process.stdin,

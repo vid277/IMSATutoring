@@ -6,23 +6,10 @@
 export default {
     data(){
       return {
-        isMobile: null,
         imageData: null
       }
     },
-    created (){
-      this.checkScreenSize();
-      window.addEventListener("resize", this.checkScreenSize);
-    },
     methods: {
-      checkScreenSize(){
-        const constWidth = window.innerWidth;
-        if (constWidth <= 750){
-          this.isMobile = true;
-          return;
-        }
-        this.isMobile = false;
-    },
     onSelectFile () {
         const input = this.$refs.fileInput
         const files = input.files
@@ -37,8 +24,7 @@ export default {
     },
     chooseImage () {
         this.$refs.fileInput.click()
-    },
-    
+    }
     }
 }
 </script>
