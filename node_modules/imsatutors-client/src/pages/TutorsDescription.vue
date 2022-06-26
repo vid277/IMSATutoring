@@ -4,42 +4,50 @@
 
 <script>
 export default {
-    data(){
-      return {
-        isMobile: null,
-        imageData: null
-      }
-    },
-    created (){
-      this.checkScreenSize();
-      window.addEventListener("resize", this.checkScreenSize);
-    },
-    methods: {
-      checkScreenSize(){
-        const constWidth = window.innerWidth;
-        if (constWidth <= 750){
-          this.isMobile = true;
-          return;
-        }
-        this.isMobile = false;
-    },
-    onSelectFile () {
-        const input = this.$refs.fileInput
-        const files = input.files
-        if (files && files[0]) {
-            const reader = new FileReader
-            reader.onload = e => {
-            this.imageData = e.target.result
-            }
-            reader.readAsDataURL(files[0])
-            this.$emit('input', files[0])
-        }
-    },
-    chooseImage () {
-        this.$refs.fileInput.click()
-    },
-    
+  data () {
+    return {
+      tutorDetails:[],
+      mathCourses: [],
+      csCourses: [],
+      otherCourses: [],
+      scienceCourses: [],
+    };
+  },
+  methods : {
+  },
+  computed: {
+    tutorName() { 
+      return this.$route.params.tutorName 
     }
+  },
+  created() {
+    console.log(this.tutorName);
+    fetch(`/api/booktutor/${encodeURIComponent(this.tutorName)}`)
+      .then(response => (response.json()))
+      .then((stringify) => {this.tutorDetails = stringify;})
+      .then(() => {
+        if(this.tutorDetails.math_courses != null){
+          for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
+            this.mathCourses.push(this.tutorDetails.math_courses[i])
+          }
+        }
+        if(this.tutorDetails.science_courses != null){
+          for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
+            this.mathCourses.push(this.tutorDetails.math_courses[i])
+          }
+        }
+        if(this.tutorDetails.cs_courses != null){
+          for (var i = 0; i < this.tutorDetails.math_courses.length; i++){
+            this.mathCourses.push(this.tutorDetails.math_courses[i])
+          }
+        }
+        if(this.tutorDetails.other_courses != null){
+          for (var i = 0; i < this.tutorDetails.other_courses.length; i++){
+            this.otherCourses.push(this.tutorDetails.other_courses[i])
+          }
+        }
+      })
+    },
 }
 </script>
 
@@ -51,7 +59,7 @@ export default {
 
 <body>
 <main>
-    <h2> {Person Name} </h2>
+    <h2> {{tutorDetails.first_name + " " + tutorDetails.last_name}} </h2>
     <div class = "mainTextArea">
         <div class = "publicProfile">
             <div id="sign-up-form">
@@ -63,6 +71,8 @@ export default {
               </div>
               <div class = "tutorSubjectsDiv">
                 <h3 id = "label">Subjects I Tutor:</h3>
+                <div class = "courses" v-for = ""></div>
+                <ul></ul>
                 <p6 class = "tutoringSubjects">{subjects}</p6> 
               </div>
               <div id = "twotable">
@@ -96,7 +106,7 @@ export default {
 </body>
 </template>
 
-<style>
+<style scoped>
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;

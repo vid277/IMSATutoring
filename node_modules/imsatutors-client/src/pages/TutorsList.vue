@@ -13,6 +13,14 @@ export default {
     };
   },
   methods : {
+    redirectPage (formattedName) {
+    this.$router.push({
+      name: "booktutor",
+      params: {
+        tutorName: formattedName,
+      }
+    })
+    }
   },
   computed: {
     courseName() { 
@@ -25,17 +33,8 @@ export default {
     //decodeURIComponent(whatever) - converts to normal string
     fetch(`/api/tutors/${encodeURIComponent(this.courseName)}`)
       .then(response => (response.json()))
-      .then((stringify) => {this.tutorInformationList = stringify; console.log(this.tutorInformationList)})
-      .then(() => {
-        console.log("List I made: ")
-        //this works
-        console.log(this.tutorInformationList[0].first_name)
-        console.log(this.tutorInformationList)
-        return;
-        }
-      )
-  }
-  
+      .then((stringify) => {this.tutorInformationList = stringify;})
+  },
 }
 </script>
 
@@ -141,16 +140,19 @@ export default {
           <h1>{{courseName}}</h1>
       </div>
       <div class = "tutorCards">
-        <div class="card">
+        <div class="card" v-for = "items in tutorInformationList">
           <img src="\src\assets\card-person.png" class="card-img-top" alt="...">
-          <h5 class="card-title">[Person Name]</h5>
-          <button href="#" class="btn btn-primary">Schedule</button>
+          <div>
+            <h5 class="card-title">{{items.first_name}}</h5>
+            <h5 class="card-title">{{items.last_name}}</h5>
+          </div>
+          <button href="#" class="btn btn-primary" @click="redirectPage(((items.first_name).substring(0, 1) + items.last_name).trim().toLowerCase())">Schedule</button>
         </div>
       </div>
+      <br>
+      <br>
+      <br>
     </div>
-    <br>
-    <br>
-    <br>
   </div>
 </main>
 </template>
@@ -290,18 +292,22 @@ main {
   border: solid 2px;
   border-color: rgb(203, 213, 224);
   background-color: rgb(244, 241, 241);
-  width: min-content !important;
+  max-width: 17vw !important;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  row-gap: 0.25em;
+  row-gap: 0.5em;
   transition: 0.3s;
 }
 
+.card:hover {
+  background-color: rgb(215, 214, 214);
+}
+
 .card img {
-  width: 100%;
+  width: 8vw !important;
   border-radius: 50%;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -309,7 +315,7 @@ main {
 
 .card .card-title {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 115%;
 }
  
 .card .btn {

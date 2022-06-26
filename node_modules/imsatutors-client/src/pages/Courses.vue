@@ -318,7 +318,7 @@ export default {
     </main>
 </template>
 
-<style>
+<style scoped>
 * {
   font-family: 'Nunito', sans-serif;
   box-sizing: border-box;
@@ -331,6 +331,10 @@ export default {
 #indexheader {
   position: relative !important;
   text-align: center;
+}
+
+main h2 {
+  border-bottom: solid 0px;
 }
 
 main {
@@ -441,6 +445,9 @@ main {
     padding: 1.75%;
 }
 
+h3 {
+  text-align: center;
+}
 .card {
   padding: 1em 2em 1em;
   border-radius: 10px;

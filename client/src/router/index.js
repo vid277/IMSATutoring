@@ -1,8 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
 import MainView from "../views/Main.vue"
-
 import SignUp from '../pages/SignUp.vue'
+import SignIn from '../pages/SignIn.vue'
+import PageNotFound from '../pages/PageNotFound.vue'
+import HomeView from '../pages/Homepage.vue'
+import TutorList from '../pages/TutorsList.vue'
+import TutorDescription from '../pages/TutorsDescription.vue'
+import CoursesPage from '../pages/Courses.vue'
+import Settings from '../pages/Settings.vue'
+import HelpPage from '../pages/HelpPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,42 +26,42 @@ const router = createRouter({
         {
           path: '/signin',
           name: 'SignIn',
-          component: () => import('../pages/SignIn.vue')
+          component: SignIn
         },
         {
           path: '/:pathMatch(.*)*',
           name: '404',
-          component: () => import('../pages/PageNotFound.vue')
+          component: PageNotFound
         },
         {
           path: '/',
           name: 'main',
-          component: () => import('../pages/Homepage.vue')
+          component: HomeView
         },
         {
           path: '/tutors/:course',
           name: 'tutorList',
-          component: () => import('../pages/TutorsList.vue')
+          component: TutorList
         },
         {
-          path: '/booktutor',
+          path: '/booktutor/:tutorName',
           name: 'booktutor',
-          component: () => import('../pages/TutorsDescription.vue')
+          component: TutorDescription
         },
         {
           path: '/courses',
           name: 'courses',
-          component: () => import('../pages/Courses.vue')
+          component: CoursesPage 
         },
         {
           path: '/settings',
           name: 'settings',
-          component: () => import('../pages/Settings.vue')
+          component: Settings
         },
         {
           path: '/help',
           name: 'help',
-          component: () => import('../pages/HelpPage.vue')
+          component: HelpPage
         },
       ]
     }

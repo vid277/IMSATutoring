@@ -1373,8 +1373,9 @@
     "id": "124195",
     "year": "Class of 2024",
     "math_courses": [
+      "Mathematical Investigations 1/2",
       "Mathematical Investigations 2",
-      "Mathematical Investiafations 3"
+      "Mathematical Investigations 3"
     ],
     "physics_courses": [
       "SI Physics"
@@ -1966,7 +1967,7 @@
   },
   {
     "last_name": "Chakraborty",
-    "first_name": "Shreya Chakraborty",
+    "first_name": "Shreya",
     "id": "123034",
     "year": "Class of 2023",
     "math_courses": [

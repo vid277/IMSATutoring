@@ -111,7 +111,7 @@ main {
     height: fit-content;
     border-radius: 10px;
     border: solid 1px;
-    min-width: 35vw;
+    max-width: 40vw;
     border: solid rgb(203, 213, 224) 2px;
     background-color: white;
 }
@@ -137,7 +137,7 @@ main {
     line-height: 20px;
     border: solid rgb(203, 213, 224) 2px;
     height: 45px;
-    width: 32vw;
+    width: 100%;
     font-size: 15px;
     padding: 2px;
 }
@@ -151,7 +151,7 @@ main {
     border: solid rgb(203, 213, 224) 2px;
     height: 45px;
     font-size: 15px;
-    width: 32vw;
+    width: 100%;
     padding: 2px;
 }
 
@@ -164,13 +164,13 @@ main {
     border: solid rgb(203, 213, 224) 2px;
     height: 45px;
     font-size: 15px;
-    width: 32vw;
+    width: 100%;
     padding: 2px;
 }
 
 #Submit {
     border: 0px;
-    width: 32vw;
+    width: 100%;
     height: 7vh;
     border-radius: 5px;
     background-color: rgb(93, 170, 244) !important;

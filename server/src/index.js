@@ -16,7 +16,18 @@ api.get("/tutors/:course", (req, res) => {
     res.send(JSON.stringify(getTutorbyCourse(req.params.course)))
 });
 
+api.get("/booktutor/:tutorName", (req, res) => {
+    res.send(JSON.stringify(getTutorDetails(req.params.tutorName)))
+});
 
+function getTutorDetails (tutorName) {
+    for (var i = 0; i < userData.length; i++) {
+        var currentUser = userData[i];
+        if (((currentUser.first_name.toLowerCase()).substring(0, 1) == tutorName.substring(0, 1) && (currentUser.last_name.toLowerCase()) == tutorName.substring(1, tutorName.length))) {
+            return currentUser;
+        }
+    }
+}
 
 function getTutorbyCourse (course) {
     tutorFound = false;
