@@ -35,8 +35,8 @@ export default {
         <span><a href="request.html">Become a Tutor</a></span>
         <span><router-link to="/help">Help</router-link></span>
         <span style="flex-grow: 100000"></span>
-        <span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
-        <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>
+        <!--<span id="whitesign" style="color: rgb(255, 255, 255);"><router-link to="/signin">Sign-In</router-link></span>
+        <span id="bluesign" style="color: rgb(255, 255, 255)"><router-link to="/signup">Sign-Up</router-link></span>-->
         </header>
   <RouterView />
 </div>
@@ -101,8 +101,6 @@ background-color: rgb(47, 83, 125);
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
   overflow: hidden;
-  width: 100vw;
-  height: 100vh;
 }
 
 </style>
