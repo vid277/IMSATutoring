@@ -12,6 +12,8 @@
         "install": "^0.13.0",
         "npm": "^8.13.1",
         "rollup-plugin-vue": "^6.0.0",
-        "vue": "^3.2.37"
+        "vue": "^3.2.37",
+        "vue-google-signin-button-directive": "^1.0.3",
+        "vue3-google-oauth2": "^1.0.6"
     }
 }

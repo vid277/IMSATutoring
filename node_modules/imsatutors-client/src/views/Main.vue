@@ -48,21 +48,21 @@ export default {
 
 <style scoped>
 #indexheader {
-position: relative !important;
-top: 0;
-left: 0;
-width: 100%;
-gap: 1em;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
-flex-flow: row nowrap;
-z-index: 10000;
-height: 10vh;
-background-color: #ffffff;
-border: solid rgb(203, 213, 224) 0px;
-border-bottom-width: 2px;
+  position: relative !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  gap: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-flow: row nowrap;
+  z-index: 10000;
+  height: 10vh;
+  background-color: #ffffff;
+  border: solid rgb(203, 213, 224) 0px;
+  border-bottom-width: 2px;
 }
   
 #indexheader a {
