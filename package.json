@@ -8,6 +8,10 @@
     "dependencies": {
         "imsatutors-client": "./client",
         "imsatutors-common": "./common",
-        "imsatutors-server": "./server"
+        "imsatutors-server": "./server",
+        "install": "^0.13.0",
+        "npm": "^8.13.1",
+        "rollup-plugin-vue": "^6.0.0",
+        "vue": "^3.2.37"
     }
 }
