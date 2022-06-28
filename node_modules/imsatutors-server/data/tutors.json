@@ -1381,7 +1381,9 @@
       "SI Physics"
     ],
     "bio_courses": null,
-    "chem_course": null,
+    "chem_course": [
+      "SI Chemistry"
+    ],
     "cs_courses": [
       "Computer Science Inquiry",
       "Object Oriented Programming",

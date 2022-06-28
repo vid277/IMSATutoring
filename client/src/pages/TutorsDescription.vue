@@ -10,7 +10,9 @@ export default {
       mathCourses: [],
       csCourses: [],
       otherCourses: [],
-      scienceCourses: [],
+      chemCourses: [],
+      physicsCourses: [],
+      bioCourses: [],
     };
   },
   methods : {
@@ -45,22 +47,21 @@ export default {
             this.otherCourses.push(this.tutorDetails.other_courses[i])
           }
         }
-        if(this.tutorDetails.chem_courses != null){
-          for (var i = 0; i < this.tutorDetails.chem_courses.length; i++){
-            tempChem.push(this.tutorDetails.chem_courses[i])
+        if(this.tutorDetails.chem_course != null){
+          for (var i = 0; i < this.tutorDetails.chem_course.length; i++){
+            this.chemCourses.push(this.tutorDetails.chem_course[i])
           }
         }
         if(this.tutorDetails.physics_courses != null){
           for (var i = 0; i < this.tutorDetails.physics_courses.length; i++){
-            tempPhysics.push(this.tutorDetails.physics_courses[i])
+            this.physicsCourses.push(this.tutorDetails.physics_courses[i])
           }
         }
         if(this.tutorDetails.bio_courses != null){
           for (var i = 0; i < this.tutorDetails.bio_courses.length; i++){
-            tempBio.push(this.tutorDetails.bio_courses[i])
+            this.bioCourses.push(this.tutorDetails.bio_courses[i])
           }
         }
-        console.log(this.mathCourses)
       })
     },
 }
@@ -77,12 +78,41 @@ export default {
                 <p1 class = "aboutMe">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusantium rem ad molestiae, itaque architecto! Doloremque possimus ex, odio assumenda ratione laborum maiores, facere perferendis voluptatum mollitia hic molestias libero.
                 </p1>
-              </div>
-              <div class = "tutorSubjectsDiv">
-                <h3 id = "label">Subjects I Tutor:</h3>
-                <div class = "courses"></div>
-                <ul></ul>
-                <p6 class = "tutoringSubjects">{subjects}</p6> 
+                </div>
+                <div class = "tutorSubjectsDiv">
+                  <h3 id = "label">Subjects I Tutor:</h3>
+                  <div class = "tutorCourses">
+                    <div class = "courses" v-if="!(mathCourses.length == 0)">
+                    <h3 id = "labelUnder">Math Courses</h3>
+                      <div class = "courses" v-for = "math in mathCourses">
+                        <ul>{{math}}</ul>
+                      </div>
+                  </div>
+                  <div class = "courses" v-if="!(csCourses.length == 0)">
+                    <h3 id = "labelUnder">Computer Science Courses</h3>
+                      <div class = "courses" v-for = "cs in csCourses">
+                        <ul>{{cs}}</ul>
+                      </div>
+                  </div>
+                  <div class = "courses" v-if="!(chemCourses.length == 0)">
+                    <h3 id = "labelUnder">Chemistry Courses</h3>
+                      <div class = "courses" v-for = "chem in chemCourses">
+                        <ul>{{chem}}</ul>
+                      </div>
+                  </div>
+                  <div class = "courses" v-if="!(physicsCourses.length == 0)">
+                    <h3 id = "labelUnder">Physics Courses</h3>
+                      <div class = "courses" v-for = "physics in physicsCourses">
+                        <ul>{{physics}}</ul>
+                      </div>
+                  </div>
+                  <div class = "courses" v-if="!(bioCourses.length == 0)">
+                    <h3 id = "labelUnder">Biology Courses</h3>
+                      <div class = "courses" v-for = "bio in bioCourses">
+                        <ul>{{bio}}</ul>
+                      </div>
+                  </div>
+                </div>
               </div>
               <div id = "twotable">
                 <div>                    
@@ -108,9 +138,12 @@ export default {
                     </span>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
         </div>
     </div> 
-    <br>
 </main>
 </template>
 
@@ -121,7 +154,6 @@ export default {
   margin: 0%;
   overflow-x: hidden;
   padding: 0%;
-  overflow-y: hidden;
 }
 
 #indexheader {
@@ -135,7 +167,9 @@ main {
   width: 100%;
   height: 100%;
   gap: 0rem !important;
-  overflow-y: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 ::-webkit-scrollbar {
@@ -149,10 +183,10 @@ main {
 .mainTextArea {
     display: flex;
     flex-direction: row;
-    flex: 1;
+    /*flex: 1;*/
     margin: 0% !important;
     width: 100%;
-    height: 100%;
+    flex-grow: 10000000;
     background-image: url(../assets/whiteBackground.png);
     background-size: 500px;
     background-repeat: repeat;
@@ -163,6 +197,7 @@ main h2 {
     font-weight: 700;
     text-align: start;
     margin: 2%;
+    padding-bottom: 2%;
     font-size: 25px;
     border-bottom: solid 2px black;
     margin-bottom: 0%;
@@ -236,6 +271,22 @@ form {
     transition: 0.3s;
 }
 
+#labelUnder {
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    align-items: baseline;
+    text-align: left;
+    font-size: 16px;
+    gap: 0.55rem;
+    margin-top: 1.5%;
+    font-weight: 500;
+    text-decoration: underline;
+    color: black;
+    width: 100%;
+    transition: 0.3s;
+}
+
 textarea:hover {
     border-color: rgb(92, 158, 235) !important;
     transition: 0.3s;
@@ -252,7 +303,6 @@ textarea:hover {
 }
 
 .imageSelector {
-    height: 100%;
     width: 50%;
     margin: 3%;
     display: flex;
@@ -374,5 +424,18 @@ h3 {
 #Submit:hover{
   background-color: rgb(74, 132, 220) !important;
     transition: 0.3s;
+} 
+
+.tutorCourses {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2em;
+  flex-wrap: wrap;
+}
+
+.courses {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25em;
 }
 </style>

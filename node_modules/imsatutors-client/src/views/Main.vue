@@ -96,5 +96,13 @@ color: white !important;
 background-color: rgb(47, 83, 125);
 }
 
+#main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
 
 </style>

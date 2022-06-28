@@ -8,13 +8,14 @@
     "start": "vite build && vite preview --host"
   },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.22.1",
     "@vitejs/plugin-vue": "^2.3.3",
     "axios": "^0.27.2",
+    "imsatutors-common": "../common",
     "modernizr": "^3.12.0",
     "vite": "^2.9.12",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15",
-    "vuex": "^4.0.2",
-    "imsatutors-common": "../common"
+    "vuex": "^4.0.2"
   }
 }
