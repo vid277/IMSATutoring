@@ -72,7 +72,7 @@ main {
     align-items: center;
     gap: 3em !important;
     padding: 2em 0.5em !important;
-    height: 100% !important;
+    height: 90vh !important;
 }
 
 @media only screen and (max-width: 900px)  {
