@@ -16,6 +16,7 @@
 
 <script>
 import {inject} from 'vue';
+
 export default {
   name: 'HelloWorld',
   data(){
@@ -31,7 +32,6 @@ export default {
         if (!googleUser) {
           return null;
         }
-        this.user = googleUser.getBasicProfile();
       }
       catch (error){
         console.log(error)

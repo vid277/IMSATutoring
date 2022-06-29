@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import TopLevelComponent from "./TopLevelComponent.vue"
 import router from './router'
+import { createStore } from 'vuex'
 
 const app = createApp(TopLevelComponent)
 
