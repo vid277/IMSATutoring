@@ -27,13 +27,18 @@
             </div>
         </div>
     </div>
-    <!---<div class = "container container2">
-        <div class = "LeftHandSide">
+    <br>
+    <div class = "container container2">
+        <div class = "LeftContainer">
+            <div class = "LeftContent"></div>
+            <h1>HI THIS SHOULD BE IN PAGE 2</h1>
         </div>
-        <div class = "RightHandSide"></div>
+        <div class = "RightContainer"></div>
+        <div class = "RightContent">
+        </div>
     </div>
 
-    <div class = "container container3">
+    <!---<div class = "container container3">
         <div class = "LeftHandSide">
         </div>
         <div class = "RightHandSide"></div>
@@ -53,15 +58,15 @@
 }
 main 
 {
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden !important;
+    overflow-y: scroll !important;
     height: 100%;
     width: 100%;
 }
 .container{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .container1{
     display: flex;
@@ -71,11 +76,14 @@ main
     height: 100%;
     margin-top: 8vh;
 }
-/*.container2{
+.container2{
     display: flex;
     flex-direction: row;
     background-image: url(../assets/HomePage2.svg);
+    width: 100%;
+    height: 100%;
 }
+/*
 .container3{
     display: flex;
     flex-direction: row;
