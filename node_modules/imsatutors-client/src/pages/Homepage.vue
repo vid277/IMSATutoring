@@ -10,15 +10,17 @@
     <div class = "container container1">
         <div class = "LeftContainer">
             <div class = "LeftContent">
-                <h1 class = "maintext">Free Online Tutoring, <br> For IMSA Students <br> Like You.</h1>
+            <div class = "maincontent">
+                <h1 class="mainText">Free Online Tutoring, <br> For IMSA Students <br> Like You.</h1>
                 <br>
                 <h1 class = "maindesc">Get 1-ON-1 Homework Help Led By <br> Verified IMSA Tutors</h1>
                 <br>
-                <div class = "button">
-                    <form action="https://imsatutors.herokuapp.com/Courses">
-                        <button class="learn">Learn Now!</button>
-                    </form>
-                </div>
+            </div>
+            <div class = "button">
+                <form action="https://imsatutors.herokuapp.com/Courses">
+                    <button class="learn">Learn Now!</button>
+                </form>
+            </div>
             </div>
         </div>
         <div class = "RightContainer">
@@ -75,6 +77,10 @@ main
     width: 100%;
     height: 100%;
     margin-top: 8vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y:hidden !important;
 }
 .container2{
     display: flex;
@@ -92,16 +98,14 @@ main
 .LeftContainer{
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  height: 28vw;
-  background: #fff;
+  justify-content: center;
+  height: 100%;
   width: 50%;
   float: left;
-  margin-top: 8vh;
 }
 .RightContainer{
   float: left;
-  height: 48vw;
+  height: 100%;
   width: 50%; 
   overflow-y: hidden !important;
 }
@@ -111,7 +115,7 @@ main
 }
 .RightContent{
   width: 100%;
-  height: 48vw;
+  height: 100%;
   overflow-y: hidden !important;
   margin-left: 8vw;
 }
