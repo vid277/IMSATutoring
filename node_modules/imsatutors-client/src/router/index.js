@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import MainView from "../views/Main.vue"
 import SignUp from '../pages/SignUp.vue'
 import SignIn from '../pages/SignIn.vue'
@@ -9,6 +10,7 @@ import TutorDescription from '../pages/TutorsDescription.vue'
 import CoursesPage from '../pages/Courses.vue'
 import Settings from '../pages/Settings.vue'
 import HelpPage from '../pages/HelpPage.vue'
+import AccessNotPermitted from '../pages/AccessNotPermited.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +24,11 @@ const router = createRouter({
           path: '/signin',
           name: 'SignIn',
           component: SignIn
+        },
+        {
+          path: '/signup',
+          name: 'SignUp',
+          component: SignUp
         },
         {
           path: '/:pathMatch(.*)*',
@@ -46,7 +53,10 @@ const router = createRouter({
         {
           path: '/courses',
           name: 'courses',
-          component: CoursesPage 
+          component: CoursesPage,
+          meta: {
+            requiresAuth: true,
+          },
         },
         {
           path: '/settings',
@@ -57,6 +67,11 @@ const router = createRouter({
           path: '/help',
           name: 'help',
           component: HelpPage
+        },
+        {
+          path: '/accessdenied',
+          name: 'AccessNotPermitted',
+          component: AccessNotPermitted
         },
       ]
     }

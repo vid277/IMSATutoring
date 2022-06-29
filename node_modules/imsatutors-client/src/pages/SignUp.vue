@@ -91,7 +91,6 @@ main {
     margin: 0.6px;
     font-family: 'Nunito';
 }
-
 .fa fa-check-circle {
     height: auto;
     width: auto;
