@@ -31,11 +31,11 @@
     </div>
     <br>
     <div class = "container container2">
-        <div class = "LeftContainer">
+        <div class = "TopCont"></div>
+        <div class = "LeftCont">
             <div class = "LeftContent"></div>
-            <h1>HI THIS SHOULD BE IN PAGE 2</h1>
         </div>
-        <div class = "RightContainer"></div>
+        <div class = "RightCont"></div>
         <div class = "RightContent">
         </div>
     </div>
@@ -56,7 +56,6 @@
   margin: 0%;
   overflow-x: hidden;
   padding: 0%;
-  overflow-y: auto !important;
 }
 main 
 {
@@ -76,7 +75,6 @@ main
     background-image: url(../assets/HomePage1.svg);
     width: 100%;
     height: 100%;
-    margin-top: 8vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,7 +97,7 @@ main
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 80%;
   width: 50%;
   float: left;
 }
@@ -108,6 +106,7 @@ main
   height: 100%;
   width: 50%; 
   overflow-y: hidden !important;
+  margin-top: 8vh;
 }
 .LeftContent{
   max-width: 90%;
@@ -120,8 +119,8 @@ main
   margin-left: 8vw;
 }
 .maintext{
-  font-size: 56px;
-  font-weight: bold;
+  font-size: 65px;
+  font-weight: 900;
   letter-spacing: 3px;
 }
 .learn{
@@ -135,6 +134,30 @@ main
     font-weight: bold;
 }
 .maindesc{
-    font-size: 28px;
+    font-size: 25px;
+}
+.TopCont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 50%;
+  float: center;
+}
+.LeftCont{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  width: 50%;
+  float: left;
+}
+.RightCont{
+  float: left;
+  height: 100%;
+  width: 60%; 
+  overflow-y: hidden !important;
+  margin-top: 8vh;
+}
 }
 </style>
