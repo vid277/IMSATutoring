@@ -94,7 +94,9 @@ main
     display: flex;
     flex-direction: row;
     background-image: url(../assets/HomePage3.svg);
-}*/
+}
+
+//*/
 .LeftContainer{
   display: flex;
   align-items: center;
