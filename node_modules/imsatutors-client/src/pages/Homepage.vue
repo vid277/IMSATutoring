@@ -337,7 +337,7 @@ main
 }
 .links{
     height: 70%;
-    width:60%;
+    width:80%;
     margin-top:2vh;
     text-decoration: none;
 }
