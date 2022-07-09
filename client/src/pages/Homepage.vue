@@ -72,15 +72,50 @@
     </div>
     <div class = "container container3">
         <div class = "header">
-            <h1 class="help">Get help with math, science, and more.</h1>
+            <h1 class="help">Get help with math, science, and more.</h1> 
+            <br>
+            <br> 
+            <div class = "buttons">
+                <form action="https://imsatutors.herokuapp.com/tutors/Mathematical%20Investigations%201%2F2">
+                <button class="MI1">MI I/II</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/Mathematical%20Investigations%202">
+                 <button class="MI2">MI II</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/Mathematical%20Investigations%203">
+                 <button class="MI3">MI III</button>
+                </form> 
+                 <form action="https://imsatutors.herokuapp.com/tutors/Mathematical%20Investigations%204">
+                 <button class="MI4">MI IV</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/BC%20Calculus%201">
+                 <button class="BCI">BC I</button>
+                </form> 
+            </div>
+            <br>
+            <br>
+            <div class = "buttons1">
+                <form action="https://imsatutors.herokuapp.com/tutors/BC%20Calculus%202">
+                 <button class="BC2">BC II</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/BC%20Calculus%203">
+                 <button class="BC3">BC III</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/Multivariable%20Calculus">
+                 <button class="MVC">MVC</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/tutors/Linear%20Algebra">
+                 <button class="DIFF">LIN ALG</button>
+                </form> 
+                <form action="https://imsatutors.herokuapp.com/Courses">
+                 <button class="EXPLORE">See Subjects</button>
+                </form> 
+            </div>
         </div>
         <br>
         <br>
         <br>
         <br>
-        <div class = "hyperlink">
-            <a class="link" href="http://localhost:8080/Courses/">See all Subjects</a>
-        </div>
     </div>
     <div class = "container container4">
         <div class = "header">
@@ -160,7 +195,7 @@ main
     flex-direction: row;
     background-image: url(../assets/HomePage1.svg);
     width: 100%;
-    height: 30%;
+    height: 28%;
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -169,7 +204,7 @@ main
     flex-direction: row;
     background-image: url(../assets/HomePage2.svg);
     width: 100%;
-    height: 35%;
+    height: 30%;
     background-repeat: no-repeat;
     background-size: 100%;
     
@@ -269,11 +304,195 @@ main
     flex-direction: row;
     background-image: url(../assets/HomePage3.png);
     width: 100%;
-    height: 20%;
+    height: 16%;
     background-repeat: no-repeat;
     background-size: 100%;
     position:relative;
 }
+.buttons{
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+.MI1{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.MI2{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.MI3{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.MI4{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.BCI{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.buttons1{
+    display: inline-flex;
+    white-space: nowrap;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+.BC2{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.BC3{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.MVC{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.DIFF{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: #6497E4;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+}
+.EXPLORE{
+    display: inline-flex;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 15px;
+    padding: 12px 3em;
+    outline:none;
+    border: transparent;
+    color: #6497E4;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center; 
+    align-items: center;
+    height: 50px;
+    width: 120px; 
+    font-size: 25px;
+    text-decoration: underline;
+}
+
 .header{
     align-items: center; 
     width:100%;
