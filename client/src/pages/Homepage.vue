@@ -7,6 +7,9 @@
 
 <template>
 <main>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
     <div class = "container container1">
         <div class = "LeftContainer">
             <div class = "LeftContent">
@@ -36,6 +39,7 @@
             <div class = "maincontent">
                 <h1 class = "headtext"> How You Learn!</h1>
                 <br>
+                <br>
                 <h1 class="Text">1-ON-1 HELP WITH CERTIFIED TUTORS</h1>
                 <br>
                 <h1 class = "desc">Struggling with homework? Get live, one-on-one help <br> sessions from IMSA tutors certified in
@@ -47,6 +51,8 @@
                     <button class="learn">Get Live Help!</button>
                 </form>    
             </div>
+            <br>
+            <br>
             <br>
             <div class = "maincontent">
                 <h1 class="Text">WORK WITH YOUR PEERS IN A SMALL GROUP</h1>
@@ -125,7 +131,6 @@
             <div class = "LeftCo">
             <div class = "maincontent">
                 <h1 class="maintext">100+ Tutors</h1>
-                <br>
                 <h1 class = "maindesc"> IMSA Tutors are certified and trained in subject(s) <br>
                                         that they specialize in. Connect to our tutors and <br>     
                                         form connections with upperclassmen at IMSA.</h1>
@@ -193,11 +198,11 @@ main
 .container1{
     display: flex;
     flex-direction: row;
-    background-image: url(../assets/HomePage1.svg);
+    background-image: url(../assets/HomePage1.png);
     width: 100%;
-    height: 28%;
+    height: 27%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 .container2{
     display: flex;
@@ -228,7 +233,7 @@ main
   margin-right: 8vh;
 }
 .LeftContent{
-  max-width: 90%;
+  max-width: 100%;
   height:100%;
   margin-left: 8vw; 
 }
@@ -237,9 +242,10 @@ main
   height: 100%;
   overflow-y: hidden !important;
   margin-left: 8vw;
+  margin-bottom: 5vw;
 }
 .maintext{
-  font-size: 60px;
+  font-size: 55px;
   font-weight: 900;
   letter-spacing: 3px;
 }
@@ -253,8 +259,11 @@ main
     font-size: 15px;
     font-weight: bold;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 .maindesc{
-    font-size: 25px;
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
 }
 .RightCont{
   float: left;
@@ -272,20 +281,25 @@ main
   float: left;
   margin-top: 3vh;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
 .Text{
-  font-size: 35px;
-  font-weight: 900;
+  font-size: 28px;
+  font-weight: 800;
   letter-spacing: 3px;
+  font-family: 'Nunito', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
 .desc{
     font-size: 20px;
+    font-weight:400;
+    font-family: 'Nunito', sans-serif;
 }
 .headtext{
     text-align: right;
-    font-size: 40px;
-    font-weight: 950;
+    font-size: 36px;
+    font-weight: 1000;
     letter-spacing: 3px;
-    text-decoration: underline;
+    font-family: 'Nunito', sans-serif;
 }
 .LeftContent1{
   height: 100%;
@@ -319,7 +333,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -336,7 +350,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -353,7 +367,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -370,7 +384,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -387,7 +401,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -411,7 +425,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -428,7 +442,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -445,7 +459,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -462,7 +476,7 @@ main
     white-space: nowrap;
     background-color: #6497E4;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: white;
@@ -479,7 +493,7 @@ main
     white-space: nowrap;
     background-color: white;
     border-radius: 15px;
-    padding: 12px 3em;
+    padding: 12px 4em;
     outline:none;
     border: transparent;
     color: #6497E4;
@@ -500,13 +514,15 @@ main
     z-index: 9;
     position:absolute;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 .help{
     width:100%;
     text-align: center;
-    font-size: 40px;
-    font-weight: 950;
+    font-size: 36px;
+    font-weight: 900;
     letter-spacing: 3px;
     margin-left: 2vh;
+    font-family: 'Nunito', sans-serif;
 }
 .hyperlink{
     display:flex;
@@ -538,7 +554,7 @@ main
   width: 100%;
   height: 100%;
   overflow-y: hidden !important;
-  margin-top: 10vh;
+  margin-top: 8vh;
 }
 .LeftCo{
   max-width: 90%;
@@ -551,7 +567,7 @@ main
     flex-direction: row;
     background-image: url(../assets/HomePage5.svg);
     width: 100%;
-    height: 85%;
+    height: 86%;
     background-repeat: no-repeat;
 }
 .links{
@@ -560,26 +576,30 @@ main
     margin-top:2vh;
     text-decoration: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
 .footlink{
     text-align: right;
-    font-size: 32px;
-    font-weight: 150;
+    font-size: 36px;
+    font-weight: 900;
     letter-spacing: 3px;
     text-decoration: underline;
     align-self: flex-end;
     color: white;
     margin-left:4vh;
     text-decoration: none;
+    font-family: 'Nunito', sans-serif;
 }
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 .credits{
     font-size: 25px;
-    font-weight: 150;
-    letter-spacing: 3px;
+    font-weight: 300;
+    letter-spacing: 1px;
     text-decoration: underline;
     align-self: flex-end;
     color: white;
     margin-left:4vh;
     text-decoration: none;
+    font-family: 'Nunito', sans-serif;
 }
 
 
